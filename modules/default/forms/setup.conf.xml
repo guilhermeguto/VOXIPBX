@@ -16,7 +16,7 @@
                 <options>
                 	<class>newcheck tolabel</class>
                     <value>On / Off</value>
-                    <label>Snep Debug</label>                    
+                    <label>ToFalando Debug</label>                    
                     <description>Show error message events if activated</description>
                 </options>
             </debug>

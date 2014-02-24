@@ -13,7 +13,7 @@ echo $this->form;
     <span style="display:none;" id="text_description">
         <ul>
             <li><strong>Nome:</strong> Nome do tronco, usado para identificação.</li>
-            <li><strong>Tipo de Tronco:</strong> Tecnologia usada pelo tronco. SIP, IAX2, KHOMP, TDM/Virtual, SNEP Sip, SNEP IAX2.</li>
+            <li><strong>Tipo de Tronco:</strong> Tecnologia usada pelo tronco. SIP, IAX2, KHOMP, TDM/Virtual, ToFalando Sip, ToFalando IAX2.</li>
         </ul>
 
         <p><h2>Troncos SIP/IAX2</h2></p>
@@ -26,7 +26,7 @@ echo $this->form;
             <li><strong>Especificar usuário de Origem:</strong> Nome de usuário para as ligações do tronco.</li>
             <li><strong>Domínio de Origem:</strong> Dominio do servidor que faz a requisição. <small>Nota: algumas operadoras voip podem 		requerer o dominio delas nesse campo (mesma informação 		fornecida em: Host Remoto).</small></li>
             <li><strong>Modo de DTMF: </strong>Define os tons de freqüências utilizadas na discagem.</li>
-            <li><strong>Tempo do Controle de Qualidade:</strong> Define o tempo em que o SNEP se baseará para considerar um ramal como ativo ou inativo no sistema, valores expressados em Millisegundos.
+            <li><strong>Tempo do Controle de Qualidade:</strong> Define o tempo em que o ToFalando se baseará para considerar um ramal como ativo ou inativo no sistema, valores expressados em Millisegundos.
             <li><strong>Sim: </strong>É utilizado controle de qualidade e o tempo por padrão é de 2000 millisegundos.</li>
             <li><strong>Não:</strong> Não utiliza controle de qualidade.</li>
             <li><strong>Específicar:</strong> É possível especificar um valor em Millisegundos. O aconselhável é 500 ms. </li>
@@ -45,7 +45,7 @@ echo $this->form;
             <li><p><strong>AVANÇADO</strong></p></li>
         </ul>
         <ul>
-            <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no SNEP, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
+            <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no ToFalando, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
             <li><strong>Modo de discagem DTMF:</strong> Habilita o tronco a realizar discagem DTMF.</li>
             <li><strong>Numero do modo de discagem DTMF:</strong> Faz com que o tronco efetue a ligação para o canal do tronco e para o número destino opcional e após atendimento, envia o destino via DTMF. Usado em DISA de outras centrais.</li>
             <li><strong>Controle de Minutos:</strong>Institui um controle de minutos sobre o tronco. Caso as ligações usadas por esse tronco excedam esse tempo limite ele deixará de funcionar.</li>
@@ -56,13 +56,14 @@ echo $this->form;
         Troncos que usam placas da khomp podem ser facilmente configurados nessa tela.</p>
         <ul>
             <li><strong>Placa:</strong> Lista de canais e links das placas khomp disponíveis para serem usadas
-                como tronco pelo SNEP.</li>
+                como tronco pelo ToFalando.</li>
+
         </ul>
         <ul> 
             <li><p><strong>AVANÇADO</strong></p></li>
         </ul>
         <ul>
-            <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no SNEP, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
+            <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no ToFalando, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
             <li><strong>Modo de discagem DTMF:</strong> Habilita o tronco a realizar discagem DTMF.</li>
             <li><strong>Numero do modo de discagem DTMF:</strong> Faz com que o tronco efetue a ligação para o canal do tronco e para o número destino opcional e após atendimento, envia o destino via DTMF. Usado em DISA de outras centrais.</li>
             <li><strong>Controle de Minutos:</strong>Institui um controle de minutos sobre o tronco. Caso as ligações usadas por esse tronco excedam esse tempo limite ele deixará de funcionar.</li>
@@ -70,7 +71,7 @@ echo $this->form;
 
 
         <p><h2>Tronco TDM/Virtual</h2></p>
-        Essa opção permite que sejam cadastrados troncos que não tem detecção automática suportada pelo SNEP, como troncos Digium.</p>
+        Essa opção permite que sejam cadastrados troncos que não tem detecção automática suportada pelo ToFalando, como troncos Digium.</p>
         <ul>
             <li><strong>Tecnologia do Canal:</strong> tecnologia usada pelo tronco para interface com o Asterisk. ex: DAHDI/g1, ZAP/g2, etc.</li>
             <li><strong>ID da Expressão Regular:</strong> Opcional, ela é usada para definir uma expressão regular de identificação do tronco.
@@ -84,7 +85,7 @@ echo $this->form;
                 <li><p><strong>AVANÇADO</strong></p></li>
             </ul>
             <ul>
-                <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no SNEP, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
+                <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no ToFalando, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
                 <li><strong>Modo de discagem DTMF:</strong> Habilita o tronco a realizar discagem DTMF.</li>
                 <li><strong>Numero do modo de discagem DTMF:</strong> Faz com que o tronco efetue a ligação para o canal do tronco e para o número destino opcional e após atendimento, envia o destino via DTMF. Usado em DISA de outras centrais.</li>
                 <li><strong>Controle de Minutos:</strong>Institui um controle de minutos sobre o tronco. Caso as ligações usadas por esse tronco excedam esse tempo limite ele deixará de funcionar.</li>
@@ -100,7 +101,7 @@ echo $this->form;
                 <li><p><strong>AVANÇADO</strong></p></li>
             </ul>
             <ul>
-                <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no SNEP, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
+                <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no ToFalando, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
                 <li><strong>Modo de discagem DTMF:</strong> Habilita o tronco a realizar discagem DTMF.</li>
                 <li><strong>Numero do modo de discagem DTMF:</strong> Faz com que o tronco efetue a ligação para o canal do tronco e para o número destino opcional e após atendimento, envia o destino via DTMF. Usado em DISA de outras centrais.</li>
                 <li><strong>Controle de Minutos:</strong>Institui um controle de minutos sobre o tronco. Caso as ligações usadas por esse tronco excedam esse tempo limite ele deixará de funcionar.</li>
@@ -115,7 +116,7 @@ echo $this->form;
                 <li><p><strong>AVANÇADO</strong></p></li>
             </ul>
             <ul>
-                <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no SNEP, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
+                <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no ToFalando, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
                 <li><strong>Modo de discagem DTMF:</strong> Habilita o tronco a realizar discagem DTMF.</li>
                 <li><strong>Numero do modo de discagem DTMF:</strong> Faz com que o tronco efetue a ligação para o canal do tronco e para o número destino opcional e após atendimento, envia o destino via DTMF. Usado em DISA de outras centrais.</li>
                 <li><strong>Controle de Minutos:</strong>Institui um controle de minutos sobre o tronco. Caso as ligações usadas por esse tronco excedam esse tempo limite ele deixará de funcionar.</li>
