@@ -84,7 +84,10 @@ sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cli/php.in
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cgi/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/apache2/php.ini
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc24fb8135a3769d62e13c14cd85e60c04d85129
 /etc/init.d/mysql restart
 /etc/init.d/apache2 restart
 /etc/init.d/asterisk start

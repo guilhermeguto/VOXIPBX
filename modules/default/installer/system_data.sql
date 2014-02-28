@@ -278,7 +278,7 @@ INSERT INTO `grupos` (`cod_grupo`, `nome`) VALUES
 --
 
 INSERT INTO `integrador` (`id`, `name`, `address`, `city`, `state`, `cep`, `phone_1`, `email`) VALUES
-('1', 'Opens Tecnologia e Processamento de Dados Ltda ME', 'Rua dos Cisnes 541', 'Palhoca', 'Santa Catarina', '888137-300', '(48)3954-8000', 'suporte@opens.com.br');
+('1', 'ToFalando', 'Rua da Bahia 603', 'Belo Horizonte', 'Minas Gerais', '30160-012', '(31)4062-7330', 'suporte@tofalando.com.br');
 
 
 INSERT INTO peers (name, password,callerid,context,mailbox,qualify,secret,type,allow,fromuser,username,fullcontact,dtmfmode,email,`call-limit`,incominglimit,outgoinglimit, usa_vc, pickupgroup, canal,nat,peer_type, authenticate,trunk, `group`, callgroup, time_total, time_chargeby ,accountcode,amaflags,defaultip,host,insecure,language,deny,permit,mask,port,restrictcid,rtptimeout,rtpholdtimeout,musiconhold,regseconds,ipaddr,regexten,cancallforward,setvar,disallow,directmedia) VALUES ('admin','admin123','Administrador ','default','admin','no','admin123','peer','alaw;ulaw;gsm;g729;','admin','admin','','rfc2833','','0','1','1', 'no', NULL ,'','no', 'R',false,'no','admin','', NULL, 'NULL' ,'','','','dynamic','','pt_BR','','','','','','','','cliente',0,'','','yes','','all','no')
