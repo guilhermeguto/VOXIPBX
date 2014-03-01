@@ -97,7 +97,7 @@ cat snep-sip.conf >> /etc/asterisk/sip.conf
 rm -rf /var/www/index.html
 cd /var/www/ipbx/install
 cp index.php /var/www/
-
+echo "tofalando" > /etc/hostname
 
 /etc/init.d/mysql restart
 /etc/init.d/apache2 restart
