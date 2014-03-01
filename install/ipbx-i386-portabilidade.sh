@@ -90,7 +90,7 @@ cd /var/www/ipbx/install/
 cp consulta_op.php /var/lib/asterisk/agi-bin/
 cd /var/www/ipbx/install/
 cat extensions.conf > /etc/asterisk/extensions.conf
-cat snep-sip.conf >> etc/asterisk/snep/snep-sip.conf
+cat snep-sip.conf >> /etc/asterisk/snep/snep-sip.conf
 
 /etc/init.d/mysql restart
 /etc/init.d/apache2 restart
