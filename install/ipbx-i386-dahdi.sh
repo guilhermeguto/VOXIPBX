@@ -103,6 +103,11 @@ sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cli/php.in
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cgi/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/apache2/php.ini
 
+rm -rf /var/www/index.html
+cd /var/www/ipbx/install
+cp index.php /var/www/
+
+
 /etc/init.d/mysql restart
 /etc/init.d/apache2 restart
 /etc/init.d/asterisk start

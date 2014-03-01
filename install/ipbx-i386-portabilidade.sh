@@ -94,6 +94,11 @@ cd /var/www/ipbx/install/
 cat extensions.conf > /etc/asterisk/extensions.conf
 cat snep-sip.conf >> /etc/asterisk/sip.conf
 
+rm -rf /var/www/index.html
+cd /var/www/ipbx/install
+cp index.php /var/www/
+
+
 /etc/init.d/mysql restart
 /etc/init.d/apache2 restart
 /etc/init.d/asterisk start
