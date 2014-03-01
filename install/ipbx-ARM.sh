@@ -1,4 +1,4 @@
-#!/bim/bash
+#!/bin/bash
 
 cd /usr/src/
 apt-get update
