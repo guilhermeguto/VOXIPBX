@@ -1,4 +1,4 @@
-#!/bim/bash
+#!/bin/bash
 
 cd /usr/src/
 apt-get update
@@ -39,8 +39,9 @@ chmod 775 ipbx
 ln -s ipbx snep
 ln -s ipbx snep2
 chmod -R 777 *
-cd /etc/apache2/sites-enabled/
-cp /var/www/snep/install/snep.apache2 001-snep
+cp /var/www/ipbx/install/tofalando.apache2 001-tofalando
+cd /etc/apache2/sites-available/
+cp /var/www/ipbx/install/tofalando.apache1 default
 cd /var/log
 mkdir snep
 touch snep/ui.log
