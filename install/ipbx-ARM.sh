@@ -36,7 +36,7 @@ chown -R www-data.www-data *
 chmod 775 ipbx
 ln -s ipbx snep
 ln -s ipbx snep2
-
+cd /etc/apache2/sites-enabled/
 cp /var/www/ipbx/install/tofalando.apache2 001-tofalando
 cd /etc/apache2/sites-available/
 cp /var/www/ipbx/install/tofalando.apache1 default
