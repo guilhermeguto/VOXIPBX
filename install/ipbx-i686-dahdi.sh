@@ -4,7 +4,7 @@ cd /usr/src/
 apt-get update
 apt-get upgrade -y
 
-apt-get install git apache2 apache2-mpm-prefork apache2-utils apache2.2-bin apache2.2-common libapache2-mod-php5 php5 php5-cgi php5-cli php5-common php5-curl php5-gd php5-mcrypt php5-mysql php5-odbc mysql-server mysql-client libmyodbc odbcinst odbcinst1debian2 unixodbc unixodbc-dev libodbcinstq4-1 libltdl-dev libltdl7 libcurl3 libncurses5-dev build-essential  libxml2-dev lshw sudo sox vim zip libsqlite3-dev libxml2-dev libncurses5-dev libncursesw5-dev libmysqlclient-dev libiksemel-dev libssl-dev libnewt-dev libusb-dev libeditline-dev libedit-dev curl libcurl4-gnutls-dev build-essential  uuid uuid-dev openssh-server mysql-server mysql-client bison flex php5 php5-curl php5-cli php5-mysql php-pear php-db php5-gd curl sox libncurses5-dev libssl-dev libmysqlclient-dev mpg123 libxml2-dev libnewt-dev sqlite3 libsqlite3-dev pkg-config automake libtool autoconf git subversion ncurses-term ttf-bitstream-vera -y
+apt-get install  linux-headers-`uname -r` git apache2 apache2-mpm-prefork apache2-utils apache2.2-bin apache2.2-common libapache2-mod-php5 php5 php5-cgi php5-cli php5-common php5-curl php5-gd php5-mcrypt php5-mysql php5-odbc mysql-server mysql-client libmyodbc odbcinst odbcinst1debian2 unixodbc unixodbc-dev libodbcinstq4-1 libltdl-dev libltdl7 libcurl3 libncurses5-dev build-essential  libxml2-dev lshw sudo sox vim zip libsqlite3-dev libxml2-dev libncurses5-dev libncursesw5-dev libmysqlclient-dev libiksemel-dev libssl-dev libnewt-dev libusb-dev libeditline-dev libedit-dev curl libcurl4-gnutls-dev build-essential  uuid uuid-dev openssh-server mysql-server mysql-client bison flex php5 php5-curl php5-cli php5-mysql php-pear php-db php5-gd curl sox libncurses5-dev libssl-dev libmysqlclient-dev mpg123 libxml2-dev libnewt-dev sqlite3 libsqlite3-dev pkg-config automake libtool autoconf git subversion ncurses-term ttf-bitstream-vera -y
 
 a2enmod rewrite
 /etc/init.d/apache2 restart
@@ -12,7 +12,25 @@ a2enmod rewrite
 
 cd /usr/src/
 
+wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
+wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
 wget -c http://downloads.asterisk.org/pub/telephony/certified-asterisk/certified-asterisk-1.8.15-current.tar.gz
+
+tar xvfz dahdi-linux-complete-current.tar.gz
+cd dahdi-linux-complete*
+make all
+make install
+make config
+
+cd ..
+
+cd /usr/src
+tar xvfz libpri-1.4-current.tar.gz
+cd libpri-1.4.14
+make
+make install
+cd ..
+
 
 tar zxvf certified-*
 cd certified-*
@@ -38,7 +56,6 @@ chown -R www-data.www-data *
 chmod 775 ipbx
 ln -s ipbx snep
 ln -s ipbx snep2
-chmod -R 777 *
 cd /etc/apache2/sites-enabled/
 cp /var/www/ipbx/install/tofalando.apache2 001-tofalando
 cd /etc/apache2/sites-available/
@@ -81,7 +98,7 @@ mysql -uroot -p snep25 < system_data.sql
 mysql -uroot -p snep25 < cnl_data.sql
 
 cd /usr/lib/odbc/
-ln -s /usr/lib/i386-linux-gnu/odbc/libmyodbc.so
+ln -s /usr/lib/x86_64-linux-gnu/odbc/libmyodbc.so
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cli/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cgi/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/apache2/php.ini
@@ -94,4 +111,4 @@ cp index.php /var/www/
 /etc/init.d/mysql restart
 /etc/init.d/apache2 restart
 /etc/init.d/asterisk start
-# asterisk -rx “module reload
+# asterisk -rx “module reload”

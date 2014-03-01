@@ -81,10 +81,18 @@ mysql -uroot -p snep25 < system_data.sql
 mysql -uroot -p snep25 < cnl_data.sql
 
 cd /usr/lib/odbc/
-ln -s /usr/lib/i386-linux-gnu/odbc/libmyodbc.so
+ln -s /usr/lib/x86_64-linux-gnu/odbc/libmyodbc.so
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cli/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cgi/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/apache2/php.ini
+
+cd /var/www/ipbx/install/phpagi
+cp -rfv * /var/lib/asterisk/agi-bin/
+cd /var/www/ipbx/install/
+cp consulta_op.php /var/lib/asterisk/agi-bin/
+cd /var/www/ipbx/install/
+cat extensions.conf > /etc/asterisk/extensions.conf
+cat snep-sip.conf >> /etc/asterisk/sip.conf
 
 rm -rf /var/www/index.html
 cd /var/www/ipbx/install
