@@ -7,8 +7,9 @@
     echo "  2)  Instalar Asterisk apenas"
     echo "  3)  Instalar PABX ToFalando"
     echo "  4)  Instalar Portabilidade"
+    echo "  5)  Instalar G729 FREE"
     echo "  0)  Sair"
-    echo -n "(0-4) : "
+    echo -n "(0-5 : "
     read OPTION < /dev/tty
 
 ExitFinish=0
@@ -111,6 +112,17 @@ while [ $ExitFinish -eq 0 ]; do
 			ExitFinish=1
 			bash install-asterisk.sh
 		;;
+
+                5)
+
+                        #Instalar o G729 FREE
+                        cd /usr/src/
+                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-g729.sh
+                        bash install-g729.sh
+                        ExitFinish=1
+                        bash install-asterisk.sh
+                ;;
+
 
 		0)
         		ExitFinish=1
