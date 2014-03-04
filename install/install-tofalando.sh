@@ -84,6 +84,12 @@ cd /var/www/ipbx/install
 cp index.php /var/www/
 echo "tofalando" > /etc/hostname
 
+#POSTIFX
+cd /var/www/ipbx/install/etc/
+cp -rfv postfix /etc/
+cd /usr/src/
+
+
 # Seta IPTABLES
 
 iptables -I INPUT 3 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
@@ -93,6 +99,6 @@ service iptables save
 /etc/init.d/mysql restart
 /etc/init.d/apache2 restart
 /etc/init.d/asterisk start
-
+/etc/init.d/postfix restart
 
 bash install-asterisk.sh
