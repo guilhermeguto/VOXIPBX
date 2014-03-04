@@ -29,9 +29,9 @@ case $DIST in
 	apt-get -y upgrade
 	echo "America/Sao_Paulo" > /etc/timezone
 	dpkg-reconfigure --frontend noninteractive tzdata
+	locale-gen pt_BR.UTF-8
 	export LANG=pt_BR.UTF-8
 	export LC_ALL=pt_BR.UTF-8
-	locale-gen pt_BR.UTF-8
 	
 	apt-get -y install vim git-core
 	# POSTFIX
