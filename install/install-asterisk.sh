@@ -94,7 +94,8 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar o ToFalando IPBX
                         cd /usr/src/
                         wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-tofalando.sh
-                        bash install-tofalando.sh
+                        ExitFinish=1
+			bash install-tofalando.sh
                 ;;
 
 
@@ -104,9 +105,8 @@ while [ $ExitFinish -eq 0 ]; do
         		cd /usr/src/
         		wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-portabilidade.sh
         		bash install-portabilidade.sh
-
-
-       			 ExitFinish=1
+			ExitFinish=1
+			bash install-asterisk.sh
 		;;
 
 		0)

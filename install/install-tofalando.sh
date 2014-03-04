@@ -55,8 +55,26 @@ mysql -uroot -ptofalando2014 snep25 < schema.sql
 mysql -uroot -ptofalando2014 snep25 < system_data.sql
 mysql -uroot -ptofalando2014 snep25 < cnl_data.sql
 
-cd /usr/lib/odbc/
-ln -s /usr/lib/i386-linux-gnu/odbc/libmyodbc.so
+# Seta a CPU
+
+cpu=`getconf LONG_BIT`
+
+if echo $cpu | grep -i "32" > /dev/null ; then
+	echo "32"
+	cd /usr/lib/odbc/
+       	ln -s /usr/lib/i386-linux-gnu/odbc/libmyodbc.so
+
+else
+	echo "64"
+
+	cd /usr/lib/odbc/
+        ln -s /usr/lib/x86_64-linux-gnu/odbc/libmyodbc.so
+
+fi
+
+# Fim seta CPU
+
+
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cli/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cgi/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/apache2/php.ini
