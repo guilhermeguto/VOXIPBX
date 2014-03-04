@@ -68,7 +68,8 @@ while [ $ExitFinish -eq 0 ]; do
 		
 		      #Instalando ASTERISK
                         cd /usr/src/
-                        rm -rf certified-asterisk-1.8.15-cert4
+                        wget -c http://downloads.asterisk.org/pub/telephony/certified-asterisk/certified-asterisk-1.8.15-current.tar.gz
+			rm -rf certified-asterisk-1.8.15-cert4
 
                         tar zxvf certified-*
                         cd certified-*
