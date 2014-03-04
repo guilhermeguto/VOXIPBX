@@ -20,7 +20,7 @@ while [ $ExitFinish -eq 0 ]; do
 	 case $OPTION in
 
 		1)
-
+			clear
 			cd /usr/src/
 			wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
 			wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
@@ -32,7 +32,8 @@ while [ $ExitFinish -eq 0 ]; do
 			make all
 			make install
 			make config
-
+			
+			clear
 			cd ..
 			# DAHDI Instalado
 
@@ -43,7 +44,8 @@ while [ $ExitFinish -eq 0 ]; do
 			make
 			make install
 			cd ..
-
+			
+			clear
 			#Instalando ASTERISK
 			cd /usr/src/
 			rm -rf certified-asterisk-1.8.15-cert4 
@@ -69,6 +71,7 @@ while [ $ExitFinish -eq 0 ]; do
 
 		
 		      #Instalando ASTERISK
+			clear
                         cd /usr/src/
                         wget -c http://downloads.asterisk.org/pub/telephony/certified-asterisk/certified-asterisk-1.8.15-current.tar.gz
 			rm -rf certified-asterisk-1.8.15-cert4
@@ -96,7 +99,8 @@ while [ $ExitFinish -eq 0 ]; do
                 3)
 
                         #Instalar o ToFalando IPBX
-                        cd /usr/src/
+                        clear
+			cd /usr/src/
                         wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-tofalando.sh
                         ExitFinish=1
 			bash install-tofalando.sh
@@ -106,7 +110,8 @@ while [ $ExitFinish -eq 0 ]; do
 		4)
 
   			#Instalar o Portabilidade IPBX
-        		cd /usr/src/
+        		clear
+			cd /usr/src/
         		wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-portabilidade.sh
         		bash install-portabilidade.sh
 			ExitFinish=1
@@ -116,7 +121,8 @@ while [ $ExitFinish -eq 0 ]; do
                 5)
 
                         #Instalar o G729 FREE
-                        cd /usr/src/
+                        clear
+			cd /usr/src/
                         wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-g729.sh
                         bash install-g729.sh
                         ExitFinish=1
