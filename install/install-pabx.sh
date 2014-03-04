@@ -32,9 +32,9 @@ esac
 
 #Instalar o Asterisk
 cd /usr/src/
-#wget --no-check-certificate  https://raw.github.com/Star2Billing/newfies-dialer/$BRANCH/install/install-freeswitch.sh -O install-freeswitch.sh
-#bash install-freeswitch.sh
-#/etc/init.d/freeswitch start
+wget --no-check-certificate  https://raw.github.com/eluizbr/VOXIPBX/master/install/install-asterisk.sh
+bash install-asterisk.sh
+/etc/init.d/asterisk start
 
 #Instalar o ToFalando IPBX
 cd /usr/src/
