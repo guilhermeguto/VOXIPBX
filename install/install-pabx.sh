@@ -27,7 +27,9 @@ case $DIST in
     'DEBIAN')
         apt-get -y update
         apt-get -y install vim git-core
-    	#APACHE
+	# POSTFIX
+	apt-get install -y postfix mailutils libsasl2-2 ca-certificates libsasl2-modules    
+	#APACHE
 	apt-get install -y apache2 apache2-mpm-prefork apache2-utils apache2.2-bin apache2.2-common libapache2-mod-php5
 	#PHP
 	apt-get install -y php5-suhosin  php5 php5-cgi php5-cli php5-common php5-curl php5-gd php5-mcrypt php5-mysql php5-odbc php5-curl php5-mysql php-pear php-db php5-gd
