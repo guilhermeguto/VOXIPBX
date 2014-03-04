@@ -60,10 +60,20 @@ echo done
 ;;
 
 2)
-        ExitFinish=1
+        #Instalar o ToFalando IPBX
+	cd /usr/src/
+	wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-tofalando.sh 
+	bash install-tofalando.sh
 ;;
 
 3)
+
+  	#Instalar o Portabilidade IPBX
+        cd /usr/src/
+        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-portabilidade.sh
+        bash install-portabilidade.sh
+
+
         ExitFinish=1
 ;;
 

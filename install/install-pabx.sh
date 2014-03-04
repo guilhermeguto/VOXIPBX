@@ -3,7 +3,7 @@
 func_identify_os() {
     if [ -f /etc/debian_version ] ; then
         DIST='DEBIAN'
-        if [ "$(lsb_release -cs)" != "precise1" ]; then
+        if [ "$(lsb_release -cs)" != "precise" ]; then
             echo "A instalação funciona apenas no Ubuntu LTS 12.04"
             exit 255
         fi
@@ -36,7 +36,3 @@ wget --no-check-certificate  https://raw.github.com/eluizbr/VOXIPBX/master/insta
 bash install-asterisk.sh
 /etc/init.d/asterisk start
 
-#Instalar o ToFalando IPBX
-cd /usr/src/
-#wget --no-check-certificate https://raw.github.com/Star2Billing/newfies-dialer/$BRANCH/install/install-newfies.sh -O install-newfies.sh
-#bash install-newfies.sh
