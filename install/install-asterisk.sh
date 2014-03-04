@@ -61,6 +61,7 @@ while [ $ExitFinish -eq 0 ]; do
 			make install
 			make config
 			make samples
+			ldconfig
 			cd ..
 			echo done
 			ExitFinish=1
@@ -87,6 +88,7 @@ while [ $ExitFinish -eq 0 ]; do
                         make install
                         make config
                         make samples
+			ldconfig
 			cd ..
                         echo done
                         ExitFinish=1
