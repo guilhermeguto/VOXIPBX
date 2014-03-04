@@ -32,7 +32,9 @@ case $DIST in
 	#PHP
 	apt-get install -y php5-suhosin  php5 php5-cgi php5-cli php5-common php5-curl php5-gd php5-mcrypt php5-mysql php5-odbc php5-curl php5-mysql php-pear php-db php5-gd
 	# MYSQL
-	apt-get install -y mysql-server mysql-client libmysqlclient-dev
+	export DEBIAN_FRONTEND=noninteractive
+	apt-get install -q -y mysql-server mysql-client libmysqlclient-dev
+	mysqladmin -u root password tofalando2014
 	#ODBC
 	apt-get install -y libmyodbc odbcinst odbcinst1debian2 unixodbc unixodbc-dev libodbcinstq4-1
 	# DEVEL

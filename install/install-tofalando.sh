@@ -49,11 +49,11 @@ ln -sf /var/lib/asterisk/moh/ moh
 ln -sf /var/lib/asterisk/sounds/pt_BR/ pt_BR
 
 cd /var/www/snep/install/
-mysql -uroot -p < database.sql
+mysql -uroot -ptofalando2014 < database.sql
 cd /var/www/snep/modules/default/installer
-mysql -uroot -p snep25 < schema.sql
-mysql -uroot -p snep25 < system_data.sql
-mysql -uroot -p snep25 < cnl_data.sql
+mysql -uroot -ptofalando2014 snep25 < schema.sql
+mysql -uroot -ptofalando2014 snep25 < system_data.sql
+mysql -uroot -ptofalando2014 snep25 < cnl_data.sql
 
 cd /usr/lib/odbc/
 ln -s /usr/lib/i386-linux-gnu/odbc/libmyodbc.so
