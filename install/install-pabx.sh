@@ -47,5 +47,4 @@ esac
 cd /usr/src/
 wget --no-check-certificate  https://raw.github.com/eluizbr/VOXIPBX/master/install/install-asterisk.sh
 bash install-asterisk.sh
-/etc/init.d/asterisk start
 
