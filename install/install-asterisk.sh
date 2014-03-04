@@ -22,7 +22,7 @@ cd /usr/src/
 
 wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
 wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
-#wget -c http://downloads.asterisk.org/pub/telephony/certified-asterisk/certified-asterisk-1.8.15-current.tar.gz
+wget -c http://downloads.asterisk.org/pub/telephony/certified-asterisk/certified-asterisk-1.8.15-current.tar.gz
 
 tar xvfz dahdi-linux-complete-current.tar.gz
 cd dahdi-linux-complete*

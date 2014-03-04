@@ -27,7 +27,19 @@ case $DIST in
     'DEBIAN')
         apt-get -y update
         apt-get -y install vim git-core
-    ;;
+    	#APACHE
+	apt-get install -y apache2 apache2-mpm-prefork apache2-utils apache2.2-bin apache2.2-common libapache2-mod-php5
+	#PHP
+	apt-get install -y php5-suhosin  php5 php5-cgi php5-cli php5-common php5-curl php5-gd php5-mcrypt php5-mysql php5-odbc php5-curl php5-mysql php-pear php-db php5-gd
+	# MYSQL
+	apt-get install -y mysql-server mysql-client libmysqlclient-dev
+	#ODBC
+	apt-get install -y libmyodbc odbcinst odbcinst1debian2 unixodbc unixodbc-dev libodbcinstq4-1
+	# DEVEL
+	apt-get install -y  build-essential linux-headers-`uname -r` bison flex  zip  curl sox  lshw ncurses-term ttf-bitstream-vera libncurses5-dev automake libtool mpg123 sqlite3 libsqlite3-dev libncursesw5-dev uuid-dev  libxml2-dev libnewt-dev  pkg-config  autoconfsubversion  libltdl-dev libltdl7 libcurl3   libxml2-dev   libiksemel-dev libssl-dev libnewt-dev libusb-dev libeditline-dev libedit-dev libcurl4-gnutls-dev  libssl-dev 
+
+	
+;;
 esac
 
 #Instalar o Asterisk
