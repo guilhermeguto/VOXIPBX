@@ -26,7 +26,12 @@ read TEMP
 case $DIST in
     'DEBIAN')
         apt-get -y update
-        apt-get -y install vim git-core
+	apt-get -y upgrade
+	export LANG=pt_BR.UTF-8
+	export LC_ALL=pt_BR.UTF-8
+	locale-gen pt_BR.UTF-8
+	
+	apt-get -y install vim git-core
 	# POSTFIX
 	export DEBIAN_FRONTEND=noninteractive
 	apt-get install -q -y postfix mailutils libsasl2-2 ca-certificates libsasl2-modules    
