@@ -10,10 +10,10 @@ mv VOXIPBX ipbx
 mv ipbx  /var/www/
 cd /var/www/
 chown -R www-data.www-data *
-chmod 644 ipbx
+chmod 755 ipbx
 ln -s ipbx snep
 ln -s ipbx snep2
-chmod -R 644 *
+chmod -R 755 *
 cd /etc/apache2/sites-enabled/
 cp /var/www/ipbx/install/tofalando.apache2 001-tofalando
 cd /etc/apache2/sites-available/
