@@ -28,7 +28,8 @@ case $DIST in
         apt-get -y update
         apt-get -y install vim git-core
 	# POSTFIX
-	apt-get install -y postfix mailutils libsasl2-2 ca-certificates libsasl2-modules    
+	export DEBIAN_FRONTEND=noninteractive
+	apt-get install -q -y postfix mailutils libsasl2-2 ca-certificates libsasl2-modules    
 	#APACHE
 	apt-get install -y apache2 apache2-mpm-prefork apache2-utils apache2.2-bin apache2.2-common libapache2-mod-php5
 	#PHP
