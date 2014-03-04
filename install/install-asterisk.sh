@@ -58,6 +58,7 @@ while [ $ExitFinish -eq 0 ]; do
 			make install
 			make config
 			make samples
+			cd ..
 			echo done
 			ExitFinish=1
 			bash install-asterisk.sh
@@ -82,6 +83,7 @@ while [ $ExitFinish -eq 0 ]; do
                         make install
                         make config
                         make samples
+			cd ..
                         echo done
                         ExitFinish=1
                         bash install-asterisk.sh
