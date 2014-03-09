@@ -74,10 +74,14 @@ fi
 
 # Fim seta CPU
 
+# Alterações em Arquivos
 
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cli/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cgi/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/apache2/php.ini
+sed -i s/"useragent=Asterisk PBX - OpenS Tecnologia"/"useragent=ToFalando PABX"/g /etc/asterisk/sip.conf
+
+# FIM Alterações em Arquivos
 
 rm -rf /var/www/index.html
 cd /var/www/ipbx/install
