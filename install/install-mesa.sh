@@ -21,7 +21,11 @@ if echo $cpu | grep -i "32" > /dev/null ; then
 	cd /usr/src
         rm -rf fop*
 	/etc/init.d/fop2 restart
-        clear
+        
+	# Alterações em Arquivos
+	sed -i s/";callevents=no"/callevents=yes/g /etc/asterisk/sip.conf
+	/etc/init.d/asterisk restart
+	clear
 
 
 else
@@ -42,6 +46,10 @@ else
 	cd /usr/src
 	rm -rf fop*
 	/etc/init.d/fop2 restart
+
+	# Alterações em Arquivos
+        sed -i s/";callevents=no"/callevents=yes/g /etc/asterisk/sip.conf
+        /etc/init.d/asterisk restart
 	clear
 
 fi
