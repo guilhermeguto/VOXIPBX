@@ -8,8 +8,9 @@
     echo "  3)  Instalar PABX ToFalando"
     echo "  4)  Instalar Portabilidade"
     echo "  5)  Instalar G729 FREE"
+    echo "  6)  Instalar Mesa Operadora"	
     echo "  0)  Sair"
-    echo -n "(0-5 : "
+    echo -n "(0-6 : "
     read OPTION < /dev/tty
 
 ExitFinish=0
@@ -121,6 +122,17 @@ while [ $ExitFinish -eq 0 ]; do
 			cd /usr/src/
                         wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-g729.sh
                         bash install-g729.sh
+                        ExitFinish=1
+                        bash install-asterisk.sh
+                ;;
+
+                6)
+
+                        #Instalar a Mesa Operadora
+                        clear
+                        cd /usr/src/
+                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-mesa.sh
+                        bash install-mesa.sh
                         ExitFinish=1
                         bash install-asterisk.sh
                 ;;
