@@ -16,6 +16,8 @@ if echo $cpu | grep -i "32" > /dev/null ; then
         cp buttons.cfg /usr/local/fop2/
         cp presence.js /var/www/fop2/js/
         cp config.php /var/www/fop2/
+	rm -rf /etc/asterisk/manager.conf
+	cp manager.conf /etc/asterisk
 	cd /var/www/ipbx/
 	ln -s /var/www/fop2/ mesa
 	cd /usr/src
@@ -41,6 +43,8 @@ else
 	cp buttons.cfg /usr/local/fop2/
 	cp presence.js /var/www/fop2/js/
 	cp config.php /var/www/fop2/
+	rm -rf /etc/asterisk/manager.conf
+	cp manager.conf /etc/asterisk/
 	cd /var/www/ipbx/
         ln -s /var/www/fop2/ mesa
 	cd /usr/src

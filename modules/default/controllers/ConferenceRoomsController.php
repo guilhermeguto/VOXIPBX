@@ -189,7 +189,7 @@ class ConferenceRoomsController extends Zend_Controller_Action {
 
                     if ($idActivate == $idCostCenter) {
 
-                        $contentConfe .= ";SNEP(" . $idActivate . "): Room added by system\n";
+                        $contentConfe .= ";ToFalando(" . $idActivate . "): Room added by system\n";
                         $contentConfe .= "exten => " . $idActivate . ",1,Set(CHANNEL(language)=pt_BR)\n";
                     }
 
@@ -234,7 +234,7 @@ class ConferenceRoomsController extends Zend_Controller_Action {
                         }
                     }
                 }
-                $contentConfe .= "exten => " . $idActivate . ",n,ConfBridge(\${EXTEN},cM)\n";
+                $contentConfe .= "exten => " . $idActivate . ",n,MeetMe(\${EXTEN},cM)\n";
                 $contentConfe .= "exten => " . $idActivate . ",n,Hangup\n";
                 $contentConfe .= "\n";
             }
