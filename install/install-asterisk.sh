@@ -139,7 +139,10 @@ while [ $ExitFinish -eq 0 ]; do
 
 
 		0)
-        		ExitFinish=1
+        		clear
+			cd /usr/src/
+			rm -rf asterisk* dahdi* lib* install* fop*  
+			ExitFinish=1
 		;;
 		*)
 	esac
