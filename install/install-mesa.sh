@@ -6,7 +6,9 @@ if echo $cpu | grep -i "32" > /dev/null ; then
 	echo "32"
 
 	clear
-        cd /usr/src
+        cd /var/www/ipbx/
+	git pull origin master
+	cd /usr/src
         wget -c http://download2.fop2.com/fop2-2.27-debian-i386.tgz
         tar zxvf fop2-2.27-debian-x86_64.tgz
         cd fop2
@@ -33,6 +35,8 @@ if echo $cpu | grep -i "32" > /dev/null ; then
 else
 	echo "64"
 	clear
+	cd /var/www/ipbx/
+	git pull origin master
 	cd /usr/src
 	wget -c http://download2.fop2.com/fop2-2.27-debian-x86_64.tgz
 	tar zxvf fop2-2.27-debian-x86_64.tgz

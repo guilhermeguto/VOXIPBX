@@ -1,6 +1,7 @@
 #!/bin/bash
 
-
+cd /var/www/ipbx/
+git pull origin master
 
 cd /var/www/ipbx/install/phpagi
 cp -rfv * /var/lib/asterisk/agi-bin/
