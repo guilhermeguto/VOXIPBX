@@ -24,7 +24,7 @@ while [ $ExitFinish -eq 0 ]; do
 			cd /usr/src/
 			wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
 			wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
-			wget -c http://downloads.asterisk.org/pub/telephony/certified-asterisk/certified-asterisk-1.8.15-current.tar.gz
+			wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8-current.tar.gz
 
 			# Instalando DAHDI
 			tar xvfz dahdi-linux-complete-current.tar.gz
@@ -47,11 +47,9 @@ while [ $ExitFinish -eq 0 ]; do
 			
 			clear
 			#Instalando ASTERISK
-			cd /usr/src/
-			rm -rf certified-asterisk-1.8.15-cert4 
-
-			tar zxvf certified-*
-			cd certified-*
+			cd /usr/src/ 
+			tar zxvf asterisk-*
+			cd asterisk-*
 			make distclean
 			./configure
 			contrib/scripts/get_mp3_source.sh
@@ -74,11 +72,8 @@ while [ $ExitFinish -eq 0 ]; do
 		      #Instalando ASTERISK
 			clear
                         cd /usr/src/
-                        wget -c http://downloads.asterisk.org/pub/telephony/certified-asterisk/certified-asterisk-1.8.15-current.tar.gz
-			rm -rf certified-asterisk-1.8.15-cert4
-
-                        tar zxvf certified-*
-                        cd certified-*
+			wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8-current.tar.gz
+			cd asterisk-*
                         make distclean
                         ./configure
                         contrib/scripts/get_mp3_source.sh
@@ -88,12 +83,11 @@ while [ $ExitFinish -eq 0 ]; do
                         make install
                         make config
                         make samples
-			ldconfig
+                        ldconfig
 			cd ..
                         echo done
                         ExitFinish=1
                         bash install-asterisk.sh
-
 		;;
 
 
