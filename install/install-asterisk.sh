@@ -1,10 +1,10 @@
 #!/bin/bash
 
     clear
-    echo " > Instalando Asterisk"
+    echo " > Instalar ToFalando IPBX"
     echo "====================================="
-    echo "  1)  Instalar Asterisk - DAHDI - LIBPRI"
-    echo "  2)  Instalar Asterisk apenas"
+    echo "  1)  Instalar PLacas TDM / E1"
+    echo "  2)  Instalar SIP / VOIP apenas"
     echo "  3)  Instalar PABX ToFalando"
     echo "  4)  Instalar Portabilidade"
     echo "  5)  Instalar G729 FREE"
