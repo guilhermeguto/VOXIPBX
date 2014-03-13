@@ -10,7 +10,7 @@ if echo $cpu | grep -i "32" > /dev/null ; then
 	git pull origin master
 	cd /usr/src
         wget -c http://download2.fop2.com/fop2-2.27-debian-i386.tgz
-        tar zxvf fop2-2.27-debian-x86_64.tgz
+        tar zxvf fop2-2.27-debian-i386.tgz
         cd fop2
         make install
         cd /var/www/ipbx/install/mesa
