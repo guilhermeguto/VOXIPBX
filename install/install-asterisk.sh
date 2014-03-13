@@ -74,6 +74,7 @@ while [ $ExitFinish -eq 0 ]; do
 			clear
                         cd /usr/src/
 			wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8-current.tar.gz
+			tar zxvf asterisk-*
 			cd asterisk-*
                         make distclean
                         ./configure
