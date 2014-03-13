@@ -24,6 +24,7 @@ if echo $cpu | grep -i "32" > /dev/null ; then
 	ln -s /var/www/fop2/ mesa
 	cd /usr/src
         rm -rf fop*
+        echo "create database fop2" | mysql -u root -ptofalando2014
 	/etc/init.d/fop2 restart
         
 	# Alterações em Arquivos
@@ -53,6 +54,7 @@ else
         ln -s /var/www/fop2/ mesa
 	cd /usr/src
 	rm -rf fop*
+	echo "create database fop2" | mysql -u root -ptofalando2014
 	/etc/init.d/fop2 restart
 
 	# Alterações em Arquivos
