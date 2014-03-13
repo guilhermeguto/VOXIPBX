@@ -6,8 +6,8 @@
 
 $DBHOST = 'localhost';
 $DBNAME = 'fop2';
-$DBUSER = 'fop2';
-$DBPASS = '';
+$DBUSER = 'root';
+$DBPASS = 'tofalando2014';
 
 // ---------------------------------------------------------
 // Do not modify below this line
