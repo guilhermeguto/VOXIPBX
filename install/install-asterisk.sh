@@ -50,7 +50,7 @@ while [ $ExitFinish -eq 0 ]; do
 			#Instalando ASTERISK
 			cd /usr/src/ 
 			tar zxvf asterisk-*
-			cd asterisk-*
+			cd asterisk-1.8.*
 			make distclean
 			./configure
 			contrib/scripts/get_mp3_source.sh
@@ -75,7 +75,7 @@ while [ $ExitFinish -eq 0 ]; do
                         cd /usr/src/
 			wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8-current.tar.gz
 			tar zxvf asterisk-*
-			cd asterisk-*
+			cd asterisk-1.8.*
                         make distclean
                         ./configure
                         contrib/scripts/get_mp3_source.sh
