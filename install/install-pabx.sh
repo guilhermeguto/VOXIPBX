@@ -7,8 +7,16 @@ func_identify_os() {
             echo "A instalação funciona apenas no Ubuntu LTS 12.04"
             exit 255
         fi
-    else
-        echo "A instalação funciona  apenas no Ubuntu LTS 12.04 "
+    
+     elif [ -f /etc/debian_version ] ; then
+        DIST='DEBIAN'
+        if [ "$(lsb_release -cs)" != "quantal" ]; then
+            echo "A instalação funciona apenas no Ubuntu LTS 12.10"
+            exit 255
+        fi
+	
+	else
+        echo "A instalação funciona  apenas no Ubuntu LTS 12.04 ou 12.10 "
         exit 1
     fi
 }
