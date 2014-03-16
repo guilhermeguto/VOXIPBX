@@ -6,6 +6,7 @@ a2enmod rewrite
 /etc/init.d/apache2 restart
 
 git clone https://github.com/eluizbr/VOXIPBX.git
+clear
 mv VOXIPBX ipbx
 mv ipbx  /var/www/
 cd /var/www/
@@ -118,6 +119,8 @@ cd /usr/src/
 # Seta IPTABLES
 
 iptables -I INPUT  -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+iptables -I INPUT  -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
+iptables -I INPUT  -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
 
 service iptables save
 
