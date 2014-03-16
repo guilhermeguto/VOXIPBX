@@ -88,6 +88,27 @@ cd /var/www/ipbx/install
 cp index.php /var/www/
 echo "tofalando" > /etc/hostname
 
+
+# Atualiza o /etc/hosts
+
+echo "127.0.0.1	localhost" > /etc/hosts
+
+
+IP_LOCAL=$(/sbin/ifconfig | sed -n '2 p' | awk '{print $3}')
+
+echo "${IP_LOCAL}	tofalando.tofalando.net	tofalando" >> /etc/hosts
+
+echo "
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters" >> /etc/hosts
+
+# FIM Atualiza /etc/hosts
+
 #POSTIFX
 cd /var/www/ipbx/install/etc/
 cp -rfv postfix /etc/
