@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# VARIAVEIS
+
+ALEATORIO=`echo $RANDOM`
+TOFALANDO="ToFalando-$ALEATORIO"
+TOFALANDO2="$ALEATORIO"
+echo " $TOFALANDO"
+echo "$TOFALANDO2"
+export TOFALANDO=$TOFALANDO
+export TOFALANDO2=$TOFALANDO2
+
+# FIM VARIAVEIS
+
+
 cd /usr/src/
 
 a2enmod rewrite
@@ -89,6 +102,7 @@ sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cli/php.in
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cgi/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/apache2/php.ini
 sed -i s/"useragent=Asterisk PBX - OpenS Tecnologia"/"useragent=ToFalando PABX"/g /etc/asterisk/sip.conf
+sed -i s/"SNEP_VERSION?"/""$TOFALANDO2"?"/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
 
 # FIM Alterações em Arquivos
 
@@ -103,7 +117,7 @@ cp -rfv fail2ban /etc
 rm -rf /var/www/index.html
 cd /var/www/ipbx/install
 cp index.php /var/www/
-echo "tofalando" > /etc/hostname
+echo "$TOFALANDO" > /etc/hostname
 
 # Install VPN
 
@@ -113,6 +127,17 @@ cp -rfv openvpn /etc
 
 # FIM Install VPN
 
+# Configura VPN
+
+ssh root@vpn.tofalando.com.br '/usr/src/gera-key.sh '$TOFALANDO''
+scp root@vpn.tofalando.com.br:/etc/openvpn/easy-rsa/keys/$TOFALANDO* .
+
+sed -i s/"cert ipbx.crt"/"cert "$TOFALANDO".crt"/g /etc/openvpn/client.conf
+sed -i s/"key ipbx.key"/"cert "$TOFALANDO".key"/g /etc/openvpn/client.conf
+
+#FIM Configura VPN
+
+
 # Atualiza o /etc/hosts
 
 echo "127.0.0.1	localhost" > /etc/hosts
@@ -120,7 +145,7 @@ echo "127.0.0.1	localhost" > /etc/hosts
 
 IP_LOCAL=$(/sbin/ifconfig | sed -n '2 p' | awk '{print $3}')
 
-echo "${IP_LOCAL}	tofalando.tofalando.net	tofalando" >> /etc/hosts
+echo "${IP_LOCAL}	$TOFALANDO.tofalando.net	$TOFALANDO" >> /etc/hosts
 
 echo "
 
