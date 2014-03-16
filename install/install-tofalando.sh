@@ -55,6 +55,14 @@ mysql -uroot -ptofalando2014 snep25 < schema.sql
 mysql -uroot -ptofalando2014 snep25 < system_data.sql
 mysql -uroot -ptofalando2014 snep25 < cnl_data.sql
 
+# Atualizar BASE
+
+cd /var/www/snep/install/
+mysql -uroot -ptofalando2014 snep25 < tofalando.sql
+
+# Fim Atualizar BASE
+
+
 # Seta a CPU
 
 cpu=`getconf LONG_BIT`
@@ -83,6 +91,14 @@ sed -i s/"useragent=Asterisk PBX - OpenS Tecnologia"/"useragent=ToFalando PABX"/
 
 # FIM Alterações em Arquivos
 
+# Install Fail2Ban
+
+cd /var/www/ipbx/install/etc
+cp -rfv fail2ban /etc
+/etc/init.d/fail2ban restart
+
+
+# Fim Instal Fail2Ban
 rm -rf /var/www/index.html
 cd /var/www/ipbx/install
 cp index.php /var/www/
