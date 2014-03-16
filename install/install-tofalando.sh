@@ -6,6 +6,7 @@ a2enmod rewrite
 /etc/init.d/apache2 restart
 
 git clone https://github.com/eluizbr/VOXIPBX.git
+clear
 mv VOXIPBX ipbx
 mv ipbx  /var/www/
 cd /var/www/
@@ -104,6 +105,27 @@ cd /var/www/ipbx/install
 cp index.php /var/www/
 echo "tofalando" > /etc/hostname
 
+
+# Atualiza o /etc/hosts
+
+echo "127.0.0.1	localhost" > /etc/hosts
+
+
+IP_LOCAL=$(/sbin/ifconfig | sed -n '2 p' | awk '{print $3}')
+
+echo "${IP_LOCAL}	tofalando.tofalando.net	tofalando" >> /etc/hosts
+
+echo "
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters" >> /etc/hosts
+
+# FIM Atualiza /etc/hosts
+
 #POSTIFX
 cd /var/www/ipbx/install/etc/
 cp -rfv postfix /etc/
@@ -113,6 +135,8 @@ cd /usr/src/
 # Seta IPTABLES
 
 iptables -I INPUT  -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+iptables -I INPUT  -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
+iptables -I INPUT  -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
 
 service iptables save
 
