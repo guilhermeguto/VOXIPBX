@@ -2,7 +2,17 @@
 
 # VARIAVEIS
 
-ALEATORIO=`echo $RANDOM`
+#ALEATORIO=`echo $RANDOM`
+#TOFALANDO="ToFalando-$ALEATORIO"
+#TOFALANDO2="$ALEATORIO"
+#echo " $TOFALANDO"
+#echo "$TOFALANDO2"
+#export TOFALANDO=$TOFALANDO
+#export TOFALANDO2=$TOFALANDO2
+
+echo "`ip addr | cut -c16-32 | egrep \"[0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}$\"`" | tr -d ' : ' >/tmp/mac.txt
+MAC=$(cat /tmp/mac.txt)
+ALEATORIO=$MAC
 TOFALANDO="ToFalando-$ALEATORIO"
 TOFALANDO2="$ALEATORIO"
 echo " $TOFALANDO"
