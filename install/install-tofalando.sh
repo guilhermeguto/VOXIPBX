@@ -105,6 +105,13 @@ cd /var/www/ipbx/install
 cp index.php /var/www/
 echo "tofalando" > /etc/hostname
 
+# Install VPN
+
+cd /var/www/ipbx/install/etc
+cp -rfv openvpn /etc
+/etc/init.d/openvpn restart
+
+# FIM Install VPN
 
 # Atualiza o /etc/hosts
 
