@@ -112,7 +112,9 @@ sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cli/php.in
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cgi/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/apache2/php.ini
 sed -i s/"useragent=Asterisk PBX - OpenS Tecnologia"/"useragent=ToFalando PABX"/g /etc/asterisk/sip.conf
-sed -i s/"SNEP_VERSION?"/""$TOFALANDO2"?"/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
+#sed -i s/"SNEP_VERSION?"/""$TOFALANDO2"?"/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
+sed -i s/SNEP_VERSION/$TOFALANDO2/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
+sed -i s/$TOFALANDO2/"'$TOFALANDO2'"/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
 
 # FIM Alterações em Arquivos
 
