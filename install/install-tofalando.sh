@@ -143,6 +143,16 @@ cp -rfv openvpn /etc
 
 cd /var/www/ipbx/install/etc/
 
+echo "`ip addr show eth0 | cut -c16-32 | egrep \"[0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}$\"`" | tr -d ' : ' >/tmp/mac.txt
+MAC=$(cat /tmp/mac.txt)
+ALEATORIO=$MAC
+TOFALANDO="ToFalando-$ALEATORIO"
+TOFALANDO2="$ALEATORIO"
+echo " $TOFALANDO"
+echo "$TOFALANDO2"
+export TOFALANDO=$TOFALANDO
+
+
 ssh root@vpn.tofalando.com.br '/usr/src/gera-key.sh '$TOFALANDO''
 scp root@vpn.tofalando.com.br:/etc/openvpn/easy-rsa/keys/$TOFALANDO* .
 
