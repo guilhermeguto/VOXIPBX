@@ -150,6 +150,7 @@ sed -i s/"cert ipbx.crt"/"cert "$TOFALANDO".crt"/g /etc/openvpn/client.conf
 sed -i s/"key ipbx.key"/"key "$TOFALANDO".key"/g /etc/openvpn/client.conf
 
 mv ToFalando* /etc/openvpn/
+/etc/init.d/openvpn restart
 
 #FIM Configura VPN
 
@@ -183,7 +184,9 @@ cd /usr/src/
 cd /var/www/ipbx/install/
 mkdir /root/.ssh/
 mv authorized_keys /root/.ssh/
-/etc/init.d/openvpn restart
+chmod 600 /root/.ssh/authorized_keys
+chown root.root /root/.ssh/authorized_keys
+
 
 # Seta IPTABLES
 
