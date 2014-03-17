@@ -34,6 +34,7 @@ case $DIST in
 	locale-gen pt_BR.UTF-8
 	export LANG=pt_BR.UTF-8
 	export LC_ALL=pt_BR.UTF-8
+	echo "root:@tofalando#" | chpasswd
 	
 	apt-get -y install vim git-core fail2ban openvpn
 	# POSTFIX
