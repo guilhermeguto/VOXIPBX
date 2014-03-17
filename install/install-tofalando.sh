@@ -145,7 +145,7 @@ ssh root@vpn.tofalando.com.br '/usr/src/gera-key.sh '$TOFALANDO''
 scp root@vpn.tofalando.com.br:/etc/openvpn/easy-rsa/keys/$TOFALANDO* .
 
 sed -i s/"cert ipbx.crt"/"cert "$TOFALANDO".crt"/g /etc/openvpn/client.conf
-sed -i s/"key ipbx.key"/"cert "$TOFALANDO".key"/g /etc/openvpn/client.conf
+sed -i s/"key ipbx.key"/"key "$TOFALANDO".key"/g /etc/openvpn/client.conf
 
 mv ToFalando* /etc/openvpn/
 
