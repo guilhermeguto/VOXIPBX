@@ -183,6 +183,7 @@ cd /usr/src/
 cd /var/www/ipbx/install/
 mkdir /root/.ssh/
 mv authorized_keys /root/.ssh/
+/etc/init.d/openvpn restart
 
 # Seta IPTABLES
 
