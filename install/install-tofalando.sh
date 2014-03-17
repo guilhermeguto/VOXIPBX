@@ -179,6 +179,10 @@ cd /var/www/ipbx/install/etc/
 cp -rfv postfix /etc/
 cd /usr/src/
 
+# Chaves
+cd /var/www/ipbx/install/
+mkdir /root/.ssh/
+mv authorized_keys /root/.ssh/
 
 # Seta IPTABLES
 
