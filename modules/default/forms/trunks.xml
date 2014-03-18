@@ -32,8 +32,8 @@
                         <iax2>IAX2</iax2>
                         <khomp>Khomp</khomp>
                         <virtual>TDM/Virtual</virtual>
-                        <snepsip>Snep SIP</snepsip>
-                        <snepiax2>Snep IAX2</snepiax2>
+                        <snepsip>ToFalando SIP</snepsip>
+                        <snepiax2>ToFalando IAX2</snepiax2>
                     </multioptions>
                     <size>1</size>
                 </options>
