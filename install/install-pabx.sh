@@ -9,7 +9,7 @@ func_identify_os() {
         fi
         
 	else
-        echo "A instalação funciona  apenas no Ubuntu LTS 12.04 ou 12.10 "
+        echo "A instalação funciona  apenas no Ubuntu LTS 12.04"
         exit 1
     fi
 }
