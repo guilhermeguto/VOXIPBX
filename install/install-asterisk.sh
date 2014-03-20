@@ -23,13 +23,14 @@ while [ $ExitFinish -eq 0 ]; do
 		1)
 			clear
 			cd /usr/src/
-			wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
-			wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
-			wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8-current.tar.gz
+			wget -c http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
+			wget -c http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
+			wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.26.1.tar.gz
 
 			# Instalando DAHDI
 			tar xvfz dahdi-linux-complete-current.tar.gz
-			cd dahdi-linux-complete*
+			ln -s dahdi-linux-complete-2.9.0+2.9.0.1/ dahdi
+			cd dahdi
 			make all
 			make install
 			make config
@@ -44,13 +45,15 @@ while [ $ExitFinish -eq 0 ]; do
 			cd libpri-1.4.14
 			make
 			make install
+			ln -s libpri-1.4.14 libpri
 			cd ..
 			
 			clear
 			#Instalando ASTERISK
 			cd /usr/src/ 
-			tar zxvf asterisk-*
-			cd asterisk-1.8.*
+			tar zxvf asterisk-1.8.26.1.tar.gz
+			ln -s asterisk-1.8.26.1 asterisk
+			cd asterisk
 			make distclean
 			./configure
 			contrib/scripts/get_mp3_source.sh
@@ -72,20 +75,20 @@ while [ $ExitFinish -eq 0 ]; do
 		
 		      #Instalando ASTERISK
 			clear
-                        cd /usr/src/
-			wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8-current.tar.gz
-			tar zxvf asterisk-*
-			cd asterisk-1.8.*
-                        make distclean
-                        ./configure
-                        contrib/scripts/get_mp3_source.sh
-                        make menuselect.makeopts
-                        menuselect/menuselect --disable CORE-SOUNDS-EN-GSM --enable app_mysql --enable cdr_mysql --enable res_config_mysql --enable cdr_odbc --enable res_odbc --enable res_config_odbc --enable  format_mp3 --enable cdr_csv menuselect.makeopts
-                        make
-                        make install
-                        make config
-                        make samples
-                        ldconfig
+                        cd /usr/src/ 
+			tar zxvf asterisk-1.8.26.1.tar.gz
+			ln -s asterisk-1.8.26.1 asterisk
+			cd asterisk
+			make distclean
+			./configure
+			contrib/scripts/get_mp3_source.sh
+			make menuselect.makeopts
+			menuselect/menuselect --disable CORE-SOUNDS-EN-GSM --enable app_mysql --enable cdr_mysql --enable res_config_mysql --enable cdr_odbc --enable res_odbc --enable res_config_odbc --enable  format_mp3 --enable cdr_csv menuselect.makeopts
+			make
+			make install
+			make config
+			make samples
+			ldconfig
 			cd ..
                         echo done
                         ExitFinish=1
