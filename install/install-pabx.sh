@@ -14,7 +14,7 @@ func_identify_os() {
             	exit 255
         fi
 else
-        echo "A instalação funciona  apenas no Ubuntu LTS 12.04"
+        echo "A instalação funciona apenas no Ubuntu LTS 12.04 Debian 7.X"
         exit 1
     fi
 }
