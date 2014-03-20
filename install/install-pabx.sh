@@ -1,4 +1,8 @@
 #!/bin/bash
+# Configurar o Branch
+BRANCH='devel'
+
+
 # Identify Linux Distribution type
 func_identify_os() {
     if [ -f /etc/debian_version ] ; then
@@ -65,6 +69,6 @@ esac
 
 #Instalar o Asterisk
 cd /usr/src/
-wget --no-check-certificate  https://raw.github.com/eluizbr/VOXIPBX/master/install/install-asterisk.sh
+wget --no-check-certificate  https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-asterisk.sh
 bash install-asterisk.sh
 

@@ -29,7 +29,7 @@ while [ $ExitFinish -eq 0 ]; do
 			wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.26.1.tar.gz
 
 			# Instalando DAHDI
-			tar xvfz dahdi-linux-complete-current.tar.gz
+			tar xvfz dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
 			ln -s dahdi-linux-complete-2.9.0+2.9.0.1/ dahdi
 			cd dahdi
 			make all
@@ -43,10 +43,10 @@ while [ $ExitFinish -eq 0 ]; do
 			#Instaldo LIBPRI
 			cd /usr/src
 			tar xvfz libpri-1.4-current.tar.gz
-			cd libpri-1.4.14
+			ln -s libpri-1.4.14 libpri
+			cd libpri
 			make
 			make install
-			ln -s libpri-1.4.14 libpri
 			cd ..
 			
 			clear
