@@ -3,13 +3,8 @@
     clear
     echo " > Instalar PLACAS ToFalando"
     echo "====================================="
-    echo "  1)  Instalar PLacas  E1 - R2"
-    echo "  2)  Instalar SIP / VOIP apenas"
-    echo "  3)  Instalar Placas"
-    echo "  4)  Instalar PABX ToFalando"
-    echo "  5)  Instalar Portabilidade"
-    echo "  6)  Instalar G729 FREE"
-    echo "  7)  Instalar Mesa Operadora"	
+    echo "  1)  Instalar PLaca E1 - R2"
+    echo "  2)  Instalar Placa E1 - ISDN "
     echo "  0)  Sair"
     echo -n "(0-7 : "
     read OPTION < /dev/tty
