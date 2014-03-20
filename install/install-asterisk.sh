@@ -5,12 +5,13 @@
     echo "====================================="
     echo "  1)  Instalar PLacas TDM / E1"
     echo "  2)  Instalar SIP / VOIP apenas"
-    echo "  3)  Instalar PABX ToFalando"
-    echo "  4)  Instalar Portabilidade"
-    echo "  5)  Instalar G729 FREE"
-    echo "  6)  Instalar Mesa Operadora"	
+    echo "  3)  Instalar Placas"
+    echo "  4)  Instalar PABX ToFalando"
+    echo "  5)  Instalar Portabilidade"
+    echo "  6)  Instalar G729 FREE"
+    echo "  7)  Instalar Mesa Operadora"	
     echo "  0)  Sair"
-    echo -n "(0-6 : "
+    echo -n "(0-7 : "
     read OPTION < /dev/tty
 
 ExitFinish=0
@@ -96,8 +97,18 @@ while [ $ExitFinish -eq 0 ]; do
 		;;
 
 
-
                 3)
+
+                        #Instalar Placas
+                        clear
+                        cd /usr/src/
+                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-cards.sh
+                        ExitFinish=1
+                        bash install-asterisk.sh
+                ;;
+
+
+                4)
 
                         #Instalar o ToFalando IPBX
                         clear
@@ -108,7 +119,7 @@ while [ $ExitFinish -eq 0 ]; do
                 ;;
 
 
-		4)
+		5)
 
   			#Instalar o Portabilidade IPBX
         		clear
@@ -119,7 +130,7 @@ while [ $ExitFinish -eq 0 ]; do
 			bash install-asterisk.sh
 		;;
 
-                5)
+                6)
 
                         #Instalar o G729 FREE
                         clear
@@ -130,7 +141,7 @@ while [ $ExitFinish -eq 0 ]; do
                         bash install-asterisk.sh
                 ;;
 
-                6)
+                7)
 
                         #Instalar a Mesa Operadora
                         clear
