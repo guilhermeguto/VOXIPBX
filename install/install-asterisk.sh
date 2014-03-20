@@ -28,7 +28,7 @@ while [ $ExitFinish -eq 0 ]; do
 			wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.26.1.tar.gz
 
 			# Instalando DAHDI
-			tar xvfz dahdi-linux-complete-current.tar.gz
+			tar xvfz dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
 			ln -s dahdi-linux-complete-2.9.0+2.9.0.1/ dahdi
 			cd dahdi
 			make all
