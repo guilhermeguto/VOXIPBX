@@ -60,6 +60,7 @@ while [ $ExitFinish -eq 0 ]; do
 				cd /usr/src/
 				bash install-cards.sh
 				ExitFinish=1
+		;;
 
 
 		0)
