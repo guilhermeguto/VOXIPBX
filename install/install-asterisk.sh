@@ -102,7 +102,7 @@ while [ $ExitFinish -eq 0 ]; do
 		0)
         		clear
 			cd /usr/src/
-			rm -rf asterisk* dahdi* lib* install* fop*  
+			rm -rf asterisk* dahdi* lib* install* fop*  funcoes* linux* openr2*
 			ExitFinish=1
 		;;
 		*)
