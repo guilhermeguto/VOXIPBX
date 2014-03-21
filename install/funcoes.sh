@@ -139,7 +139,7 @@ func_install_asterisk_full () {
 }
 
 
-func_install_oslec () { 
+func_install_openr2 () { 
 
 
                                 wget -c https://openr2.googlecode.com/files/openr2-1.3.3.tar.gz
