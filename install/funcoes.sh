@@ -32,6 +32,37 @@ func_install_dahdi ()  {
 				make config
 				ExitFinish=1
  }
+ 
+ func_install_dahdi ()  { 
+
+				clear
+                        	cd /usr/src/
+				
+                        	# Instalando DAHDI
+				cd dahdi
+				
+				# Complinado o OSLEC
+				cd /usr/src
+				KERNEL=$(uname -r | cut -d '.' -f1,2)
+				echo "$KERNEL"
+				wget -c ftp://ftp.kernel.org/pub/linux/kernel/v3.x/linux-$KERNEL.tar.bz2
+				tar xvfj linux-$KERNEL.tar.bz2 -C /usr/src/
+				ln -s linux-$KERNEL linux
+				cd /usr/src/dahdi/linux/drivers/staging
+				rm -rf echo
+				mkdir /usr/src/dahdi/linux/drivers/staging
+				mkdir /usr/src/dahdi/linux/drivers/staging/echo
+				cp -fR /usr/src/linux/drivers/staging/echo /usr/src/dahdi/linux/drivers/staging
+				sed -i "s|#obj-m += dahdi_echocan_oslec.o|obj-m += dahdi_echocan_oslec.o|" /usr/src/dahdi/linux/drivers/dahdi/Kbuild
+				sed -i "s|#obj-m += ../staging/echo/|obj-m += ../staging/echo/|" /usr/src/dahdi/linux/drivers/dahdi/Kbuild
+				echo 'obj-m += echo.o' > /usr/src/dahdi/linux/drivers/staging/echo/Kbuild
+				cd /usr/src/dahdi/
+				make all
+				make install
+				make config
+				ExitFinish=1
+ }
+ 
 
 func_install_asterisk () { 
 
