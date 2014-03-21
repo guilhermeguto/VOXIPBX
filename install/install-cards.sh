@@ -32,7 +32,7 @@ while [ $ExitFinish -eq 0 ]; do
 				echo ""
 				exit
 			fi
-
+				func_install_oslec() {
 
 				clear
                         	cd /usr/src/
@@ -91,8 +91,9 @@ while [ $ExitFinish -eq 0 ]; do
 
 				/var/www/ipbx/install/install-cards.sh
 				ExitFinish=1
+				func_install_oslec() }
 			else
-
+				
                                 wget -c https://openr2.googlecode.com/files/openr2-1.3.3.tar.gz
                                 tar xvfz openr2-1.3.3.tar.gz
                                 ln -s openr2-1.3.3 openr2
@@ -100,6 +101,7 @@ while [ $ExitFinish -eq 0 ]; do
 				./configure --prefix=/usr
 				make
 				make install
+				func_install_oslec()
 				/etc/init.d/dahdi restart
                                 /etc/ini.d/asterisk restart
                                 bash install-cards.sh
