@@ -33,7 +33,7 @@ func_install_dahdi ()  {
 				ExitFinish=1
  }
  
- func_install_dahdi ()  { 
+ func_install_dahdi_2 ()  { 
 
 				clear
                         	cd /usr/src/
