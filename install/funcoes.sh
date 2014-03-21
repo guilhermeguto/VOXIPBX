@@ -85,6 +85,7 @@ func_install_asterisk () {
                         	make samples
                         	ldconfig
                         	cd ..
+                        	/etc/init.d/asterisk restart
                         	echo done
                         	ExitFinish=1
                         
@@ -118,6 +119,8 @@ func_libpri () {
 func_install_openr2 () { 
 
 
+                                cd /usr/src/
+                                rm -rf openr2*
                                 wget -c https://openr2.googlecode.com/files/openr2-1.3.3.tar.gz
                                 tar xvfz openr2-1.3.3.tar.gz
                                 ln -s openr2-1.3.3 openr2
@@ -126,7 +129,6 @@ func_install_openr2 () {
 				make
 				make install
 				/etc/init.d/dahdi restart
-                                /etc/init.d/asterisk restart
 				#bash install-cards.sh
                                 ExitFinish=1
 
