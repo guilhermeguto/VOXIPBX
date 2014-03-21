@@ -40,6 +40,7 @@ while [ $ExitFinish -eq 0 ]; do
 		      #Instalando ASTERISK
 			clear
 			func_install_asterisk
+			bash install-asterisk.sh
 		;;
 
 
