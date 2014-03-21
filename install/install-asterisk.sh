@@ -1,4 +1,6 @@
 #!/bin/bash
+# Configurar o Branch
+BRANCH='devel'
 
     clear
     echo " > Instalar ToFalando IPBX"
@@ -102,7 +104,7 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar Placas
                         clear
                         cd /usr/src/
-                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-cards.sh
+                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-cards.sh
                         ExitFinish=1
                         bash install-asterisk.sh
                 ;;
@@ -113,7 +115,7 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar o ToFalando IPBX
                         clear
 			cd /usr/src/
-                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-tofalando.sh
+                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-tofalando.sh
                         ExitFinish=1
 			bash install-tofalando.sh
                 ;;
@@ -124,7 +126,7 @@ while [ $ExitFinish -eq 0 ]; do
   			#Instalar o Portabilidade IPBX
         		clear
 			cd /usr/src/
-        		wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-portabilidade.sh
+        		wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-portabilidade.sh
         		bash install-portabilidade.sh
 			ExitFinish=1
 			bash install-asterisk.sh
@@ -135,7 +137,7 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar o G729 FREE
                         clear
 			cd /usr/src/
-                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-g729.sh
+                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-g729.sh
                         bash install-g729.sh
                         ExitFinish=1
                         bash install-asterisk.sh
@@ -146,7 +148,7 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar a Mesa Operadora
                         clear
                         cd /usr/src/
-                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/master/install/install-mesa.sh
+                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-mesa.sh
                         bash install-mesa.sh
                         ExitFinish=1
                         bash install-asterisk.sh
