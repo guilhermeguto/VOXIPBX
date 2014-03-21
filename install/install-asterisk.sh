@@ -14,7 +14,7 @@ BRANCH='devel'
     echo "  6)  Instalar G729 FREE"
     echo "  7)  Instalar Mesa Operadora"	
     echo "  0)  Sair"
-    echo -n "(0-7 : "
+    echo -n "(0-7) : "
     read OPTION < /dev/tty
 
 ExitFinish=0
