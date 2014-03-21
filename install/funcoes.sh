@@ -1,14 +1,11 @@
 #!/bin/bash
-func_install_oslec ()  { 
+func_install_dahdi ()  { 
 
 				clear
                         	cd /usr/src/
 				rm -rf asterisk* dahdi* libpri*
                         	wget -c http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
-                        	wget -c http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
-                        	wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.26.1.tar.gz
-
-
+                        	
                         	# Instalando DAHDI
                         	tar xvfz dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
                         	ln -s dahdi-linux-complete-2.9.0+2.9.0.1/ dahdi
@@ -33,104 +30,52 @@ func_install_oslec ()  {
 				make all
 				make install
 				make config
-			
-                        	#Instaldo LIBPRI
-                        	cd /usr/src
-                        	tar xvfz libpri-1.4-current.tar.gz
-                        	ln -s libpri-1.4.14 libpri
-
-				#Instalando ASTERISK
-                        	cd /usr/src/
-                        	tar zxvf asterisk-1.8.26.1.tar.gz
-                        	ln -s asterisk-1.8.26.1 asterisk
-				cd asterisk
-				make distclean
-				./configure
-				contrib/scripts/get_mp3_source.sh
-				make menuselect.makeopts
-				menuselect/menuselect --disable CORE-SOUNDS-EN-GSM --enable app_mysql --enable cdr_mysql --enable res_config_mysql --enable cdr_odbc --enable res_odbc --enable res_config_odbc --enable  format_mp3 --enable cdr_csv menuselect.makeopts
-				make
-				make install
-				make config
-                                make samples
-				/etc/init.d/dahdi restart
-				/etc/init.d/asterisk restart
-
 				ExitFinish=1
  }
 
 func_install_asterisk () { 
 
-                      #Instalando ASTERISK
-                        clear
-                        cd /usr/src/
-                        tar zxvf asterisk-1.8.26.1.tar.gz
-                        ln -s asterisk-1.8.26.1 asterisk
-                        cd asterisk
-                        make distclean
-                        ./configure
-                        contrib/scripts/get_mp3_source.sh
-                        make menuselect.makeopts
-                        menuselect/menuselect --disable CORE-SOUNDS-EN-GSM --enable app_mysql --enable cdr_mysql --enable res_config_mysql --enable cdr_odbc --enable res_odbc --enable res_config_odbc --enable  format_mp3 --enable cdr_csv menuselect.makeopts
-                        make
-                        make install
-                        make config
-                        make samples
-                        ldconfig
-                        cd ..
-                        echo done
-                        ExitFinish=1
+				#Instalando ASTERISK
+				clear
+				rm -rf asterisk* dahdi* libpri*
+                	        cd /usr/src/
+                        	tar zxvf asterisk-1.8.26.1.tar.gz
+                        	ln -s asterisk-1.8.26.1 asterisk
+                        	cd asterisk
+                        	make distclean
+                        	./configure
+                        	contrib/scripts/get_mp3_source.sh
+                        	make menuselect.makeopts
+                        	menuselect/menuselect --disable CORE-SOUNDS-EN-GSM --enable app_mysql --enable cdr_mysql --enable res_config_mysql --enable cdr_odbc --enable res_odbc --enable res_config_odbc --enable  format_mp3 --enable cdr_csv menuselect.makeopts
+                        	make
+                        	make install
+                        	make config
+                        	make samples
+                        	ldconfig
+                        	cd ..
+                        	echo done
+                        	ExitFinish=1
                         
 
 }
 
-func_install_asterisk_full () { 
+func_libpri () { 
 
-                        clear
-                        cd /usr/src/
-                        wget -c http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
-                        wget -c http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
-                        wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.26.1.tar.gz
+                        	clear
+                        	cd /usr/src/
+				rm -rf asterisk* dahdi* libpri*
+                        	wget -c http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
 
-                        # Instalando DAHDI
-                        tar xvfz dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
-                        ln -s dahdi-linux-complete-2.9.0+2.9.0.1/ dahdi
-                        cd dahdi
-                        make all
-                        make install
-                        make config
 
-                        clear
-                        cd ..
-
-                        #Instaldo LIBPRI
-                        cd /usr/src
-                        tar xvfz libpri-1.4-current.tar.gz
-                        ln -s libpri-1.4.14 libpri
-                        cd libpri
-                        make
-                        make install
-                        cd ..
-
-                        clear
-                        #Instalando ASTERISK
-                        cd /usr/src/
-                        tar zxvf asterisk-1.8.26.1.tar.gz
-                        ln -s asterisk-1.8.26.1 asterisk
-                        cd asterisk
-                        make distclean
-                        ./configure
-                        contrib/scripts/get_mp3_source.sh
-                        make menuselect.makeopts
-                        menuselect/menuselect --disable CORE-SOUNDS-EN-GSM --enable app_mysql --enable cdr_mysql --enable res_config_mysql --enable cdr_odbc --enable res_odbc --enable res_config_odbc --enable  format_mp3 --enable cdr_csv menuselect.makeopts
-                        make
-                        make install
-                        make config
-                        make samples
-                        ldconfig
-                        cd ..
-                        echo done
-                        ExitFinish=1
+                        	#Instaldo LIBPRI
+                        	cd /usr/src
+                        	tar xvfz libpri-1.4-current.tar.gz
+                        	ln -s libpri-1.4.14 libpri
+                        	cd libpri
+                        	make
+                        	make install
+                        	cd ..
+                        	ExitFinish=1
                        
 
 
