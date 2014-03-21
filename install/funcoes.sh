@@ -56,7 +56,6 @@ func_install_oslec ()  {
 				/etc/init.d/dahdi restart
 				/etc/init.d/asterisk restart
 
-				bash install-cards.sh
 				ExitFinish=1
  }
 
@@ -81,7 +80,7 @@ func_install_asterisk () {
                         cd ..
                         echo done
                         ExitFinish=1
-                        bash install-asterisk.sh
+                        
 
 }
 
@@ -132,7 +131,7 @@ func_install_asterisk_full () {
                         cd ..
                         echo done
                         ExitFinish=1
-                        bash install-asterisk.sh
+                       
 
 
 
