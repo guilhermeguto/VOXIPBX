@@ -21,18 +21,18 @@ func_cpu () {
 
 cpu=`getconf LONG_BIT`
 
-	if echo $cpu | grep -i "32" > /dev/null ; then
+		if echo $cpu | grep -i "32" > /dev/null ; then
 			echo "32"
 			cd /usr/lib/odbc/
 		  	ln -s /usr/lib/i386-linux-gnu/odbc/libmyodbc.so
-
-	else
+	
+		else
 			echo "64"
 
 			cd /usr/lib/odbc/
 			ln -s /usr/lib/x86_64-linux-gnu/odbc/libmyodbc.so
 
-	fi
+		fi
 
 	
 }
@@ -60,22 +60,22 @@ func_vpn () {
 
 func_host () {
 	
-	func_variaveis	
+		func_variaveis	
 
-		echo "$TOFALANDO" > /etc/hostname
+			echo "$TOFALANDO" > /etc/hostname
 
-	echo "127.0.0.1	localhost" > /etc/hosts
-		IP_LOCAL=$(/sbin/ifconfig | sed -n '2 p' | awk '{print $3}')
-	echo "${IP_LOCAL}	$TOFALANDO.tofalando.net	$TOFALANDO" >> /etc/hosts
+			echo "127.0.0.1	localhost" > /etc/hosts
+			IP_LOCAL=$(/sbin/ifconfig | sed -n '2 p' | awk '{print $3}')
+			echo "${IP_LOCAL}	$TOFALANDO.tofalando.net	$TOFALANDO" >> /etc/hosts
 
-	echo "
+			echo "
 
-		# The following lines are desirable for IPv6 capable hosts
-		::1     ip6-localhost ip6-loopback
-		fe00::0 ip6-localnet
-		ff00::0 ip6-mcastprefix
-		ff02::1 ip6-allnodes
-		ff02::2 ip6-allrouters" >> /etc/hosts
+			# The following lines are desirable for IPv6 capable hosts
+			::1     ip6-localhost ip6-loopback
+			fe00::0 ip6-localnet
+			ff00::0 ip6-mcastprefix
+			ff02::1 ip6-allnodes
+			ff02::2 ip6-allrouters" >> /etc/hosts
 
 }
 
