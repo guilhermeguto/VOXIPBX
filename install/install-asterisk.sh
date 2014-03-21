@@ -93,9 +93,7 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar a Mesa Operadora
                         clear
                         cd /usr/src/
-                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-mesa.sh
-                        bash install-mesa.sh
-                        ExitFinish=1
+                        func_install_mesa
                         bash install-asterisk.sh
                 ;;
 
