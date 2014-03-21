@@ -31,15 +31,15 @@ while [ $ExitFinish -eq 0 ]; do
 				exit
 			fi
 				clear
-				func_install_openr2
 				func_install_dahdi
+				func_install_openr2
 				cd /usr/src/
 				bash install-cards.sh
 				ExitFinish=1
 			else
 				clear
-				func_install_openr2
 				func_install_dahdi_2
+				func_install_openr2
 				cd /usr/src/
 				bash install-cards.sh
 				ExitFinish=1
