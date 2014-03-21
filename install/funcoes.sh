@@ -21,18 +21,18 @@ func_cpu () {
 
 cpu=`getconf LONG_BIT`
 
-if echo $cpu | grep -i "32" > /dev/null ; then
-	echo "32"
-	cd /usr/lib/odbc/
-       	ln -s /usr/lib/i386-linux-gnu/odbc/libmyodbc.so
+	if echo $cpu | grep -i "32" > /dev/null ; then
+			echo "32"
+			cd /usr/lib/odbc/
+		  	ln -s /usr/lib/i386-linux-gnu/odbc/libmyodbc.so
 
-else
-	echo "64"
+	else
+			echo "64"
 
-	cd /usr/lib/odbc/
-        ln -s /usr/lib/x86_64-linux-gnu/odbc/libmyodbc.so
+			cd /usr/lib/odbc/
+			ln -s /usr/lib/x86_64-linux-gnu/odbc/libmyodbc.so
 
-fi
+	fi
 
 	
 }
@@ -41,48 +41,41 @@ fi
 func_vpn () {
 
 
-cd /var/www/ipbx/install/etc/
+			cd /var/www/ipbx/install/etc/
 
-echo "`ip addr show eth0 | cut -c16-32 | egrep \"[0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}$\"`" | tr -d ' : ' >/tmp/mac.txt
-MAC=$(cat /tmp/mac.txt)
-ALEATORIO=$MAC
-TOFALANDO="ToFalando-$ALEATORIO"
-TOFALANDO2="$ALEATORIO"
-echo " $TOFALANDO"
-echo "$TOFALANDO2"
-export TOFALANDO=$TOFALANDO
+		func_variaveis
 
 
-ssh root@vpn.tofalando.com.br '/usr/src/gera-key.sh '$TOFALANDO''
-scp root@vpn.tofalando.com.br:/etc/openvpn/easy-rsa/keys/$TOFALANDO* .
+			ssh root@vpn.tofalando.com.br '/usr/src/gera-key.sh '$TOFALANDO''
+			scp root@vpn.tofalando.com.br:/etc/openvpn/easy-rsa/keys/$TOFALANDO* .
 
-sed -i s/"cert ipbx.crt"/"cert "$TOFALANDO".crt"/g /etc/openvpn/client.conf
-sed -i s/"key ipbx.key"/"key "$TOFALANDO".key"/g /etc/openvpn/client.conf
+			sed -i s/"cert ipbx.crt"/"cert "$TOFALANDO".crt"/g /etc/openvpn/client.conf
+			sed -i s/"key ipbx.key"/"key "$TOFALANDO".key"/g /etc/openvpn/client.conf
 
-mv ToFalando* /etc/openvpn/
-/etc/init.d/openvpn restart
+			mv ToFalando* /etc/openvpn/
+			/etc/init.d/openvpn restart
 
 }
 
 
 func_host () {
 	
+	func_variaveis	
 
-echo "127.0.0.1	localhost" > /etc/hosts
+		echo "$TOFALANDO" > /etc/hostname
 
+	echo "127.0.0.1	localhost" > /etc/hosts
+		IP_LOCAL=$(/sbin/ifconfig | sed -n '2 p' | awk '{print $3}')
+	echo "${IP_LOCAL}	$TOFALANDO.tofalando.net	$TOFALANDO" >> /etc/hosts
 
-IP_LOCAL=$(/sbin/ifconfig | sed -n '2 p' | awk '{print $3}')
+	echo "
 
-echo "${IP_LOCAL}	$TOFALANDO.tofalando.net	$TOFALANDO" >> /etc/hosts
-
-echo "
-
-# The following lines are desirable for IPv6 capable hosts
-::1     ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters" >> /etc/hosts
+		# The following lines are desirable for IPv6 capable hosts
+		::1     ip6-localhost ip6-loopback
+		fe00::0 ip6-localnet
+		ff00::0 ip6-mcastprefix
+		ff02::1 ip6-allnodes
+		ff02::2 ip6-allrouters" >> /etc/hosts
 
 }
 
