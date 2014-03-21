@@ -231,6 +231,7 @@ func_install_g729 () {
 				mv codec_g729-ast18-gcc4-glibc-pentium.so codec_g729.so
 				chmod 755 /usr/lib/asterisk/modules/codec_g729.so
 				asterisk -x "core restart now"
+				ExitFinish=1
 		else
 				echo "64"
 				cd /usr/src/
@@ -239,6 +240,7 @@ func_install_g729 () {
 				mv codec_g729-ast18-icc-glibc-x86_64-pentium4.so codec_g729.so
 				chmod 755 /usr/lib/asterisk/modules/codec_g729.so
 				asterisk -x "core restart now"
+				ExitFinish=1
 
 		fi
 
@@ -277,6 +279,7 @@ func_install_mesa () {
 				sed -i s/";callevents=no"/callevents=yes/g /etc/asterisk/sip.conf
 				/etc/init.d/asterisk restart
 				clear
+				ExitFinish=1
 
 
 		else
@@ -307,6 +310,7 @@ func_install_mesa () {
         			sed -i s/";callevents=no"/callevents=yes/g /etc/asterisk/sip.conf
         			/etc/init.d/asterisk restart
 				clear
+				ExitFinish=1
 
 		fi
 
