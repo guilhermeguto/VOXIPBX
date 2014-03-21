@@ -6,8 +6,8 @@ BRANCH='devel'
     clear
     echo " > Instalar ToFalando IPBX"
     echo "====================================="
-    echo "  1)  Instalar Asterisk/DAHDI"
-    echo "  2)  Instalar SIP / VOIP apenas"
+    echo "  1)  Instalar Central E1 / Placas"
+    echo "  2)  Instalar Central SIP"
     echo "  3)  Instalar Placas"
     echo "  4)  Instalar PABX ToFalando"
     echo "  5)  Instalar Portabilidade"
@@ -25,9 +25,13 @@ while [ $ExitFinish -eq 0 ]; do
 	 case $OPTION in
 
 		1)
-			clear
-			func_install_dahdi
-			func_install_asterisk
+
+                        #Instalar Placas
+                        clear
+                        cd /usr/src/
+                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-cards.sh
+                        ExitFinish=1
+                        bash install-cards.sh
 		;;
 
 		2)
