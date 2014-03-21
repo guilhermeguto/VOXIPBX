@@ -5,8 +5,9 @@ source funcoes.sh
     echo "====================================="
     echo "  1)  Instalar PLaca E1 - R2"
     echo "  2)  Instalar Placa E1 - ISDN "
+    echo "  3)  Instalar Placa TRONCO FXO/FXS "
     echo "  0)  Sair"
-    echo -n "(0-2) : "
+    echo -n "(0-3) : "
     read OPTION < /dev/tty
 
 ExitFinish=0
@@ -51,6 +52,18 @@ while [ $ExitFinish -eq 0 ]; do
 
 
 		2)
+        			clear
+        			cd /usr/src/
+				clear
+				func_install_dahdi
+				func_install_libpri
+				func_install_asterisk
+				cd /usr/src/
+				bash install-cards.sh
+				ExitFinish=1
+		;;
+
+		3)
         			clear
         			cd /usr/src/
 				clear
