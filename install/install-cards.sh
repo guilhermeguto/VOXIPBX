@@ -33,9 +33,11 @@ while [ $ExitFinish -eq 0 ]; do
 				clear
 				func_install_oslec
 				func_install_openr2
+				ExitFinish=1
 			else
 				clear
 				func_install_openr2
+				ExitFinish=1
 			fi
 
                 ;;
