@@ -208,7 +208,7 @@ service iptables save
 
 /etc/init.d/mysql restart
 /etc/init.d/apache2 restart
-/etc/init.d/asterisk start
+/etc/init.d/asterisk restart
 /etc/init.d/postfix restart
 
 bash install-asterisk.sh
