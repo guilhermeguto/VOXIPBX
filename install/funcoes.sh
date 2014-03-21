@@ -3,7 +3,7 @@ func_install_dahdi ()  {
 
 				clear
                         	cd /usr/src/
-				rm -rf asterisk* dahdi* libpri*
+				rm -rf dahdi*
                         	wget -c http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
                         	
                         	# Instalando DAHDI
@@ -68,8 +68,9 @@ func_install_asterisk () {
 
 				#Instalando ASTERISK
 				clear
-				rm -rf asterisk* dahdi* libpri*
+				rm -rf asterisk*
                 	        cd /usr/src/
+                	        wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.26.1.tar.gz
                         	tar zxvf asterisk-1.8.26.1.tar.gz
                         	ln -s asterisk-1.8.26.1 asterisk
                         	cd asterisk
@@ -94,7 +95,7 @@ func_libpri () {
 
                         	clear
                         	cd /usr/src/
-				rm -rf asterisk* dahdi* libpri*
+				rm -rf libpri*
                         	wget -c http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
 
 
