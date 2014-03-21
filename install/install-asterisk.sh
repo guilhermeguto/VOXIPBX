@@ -92,7 +92,6 @@ while [ $ExitFinish -eq 0 ]; do
 
                         #Instalar a Mesa Operadora
                         clear
-                        cd /usr/src/
                         func_install_mesa
                         bash install-asterisk.sh
                 ;;
