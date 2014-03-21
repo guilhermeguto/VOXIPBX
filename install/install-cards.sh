@@ -31,8 +31,8 @@ while [ $ExitFinish -eq 0 ]; do
 				exit
 			fi
 				clear
-				func_install_oslec
 				func_install_openr2
+				func_install_oslec
 				cd /usr/src/
 				bash install-cards.sh
 				ExitFinish=1
