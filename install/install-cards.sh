@@ -21,15 +21,15 @@ while [ $ExitFinish -eq 0 ]; do
 			cd /usr/src/
 
 			# Instalando OpenR2
-			if [ ! -d "/usr/src/dahdi" ]; then
+#			if [ ! -d "/usr/src/dahdi" ]; then
 			
-				printf "Deseja instalar o DAHDI agora? (Y/n): "
-				read INPT
-			if [ "$INPT" = "n" ]; then 
-				bash install-cards.sh
-				echo ""
-				exit
-			fi
+#				printf "Deseja instalar o DAHDI agora? (Y/n): "
+#				read INPT
+#			if [ "$INPT" = "n" ]; then 
+#				bash install-cards.sh
+#				echo ""
+#				exit
+#			fi
 				clear
 				func_install_dahdi
 				func_install_openr2
@@ -37,24 +37,36 @@ while [ $ExitFinish -eq 0 ]; do
 				cd /usr/src/
 				bash install-cards.sh
 				ExitFinish=1
-			else
-				clear
-				func_install_dahdi_2
-				func_install_openr2
-				func_install_asterisk
-				cd /usr/src/
-				bash install-cards.sh
-				ExitFinish=1
-			fi
+#			else
+#				clear
+#				func_install_dahdi_2
+#				func_install_openr2
+#				func_install_asterisk
+#				cd /usr/src/
+#				bash install-cards.sh
+#				ExitFinish=1
+#			fi
 
                 ;;
 
 
+		2)
+        			clear
+        			cd /usr/src/
+				clear
+				func_install_dahdi
+				func_install_libpri
+				func_install_asterisk
+				cd /usr/src/
+				bash install-cards.sh
+				ExitFinish=1
+
+
 		0)
-        		clear
-        		cd /usr/src/
-			bash install-asterisk.sh
-			ExitFinish=1
+        			clear
+        			cd /usr/src/
+				bash install-asterisk.sh
+				ExitFinish=1
 		;;
 		*)
 	esac
