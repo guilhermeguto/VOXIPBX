@@ -26,7 +26,8 @@ while [ $ExitFinish -eq 0 ]; do
 
 		1)
 			clear
-			func_install_asterisk_full
+			func_install_dahdi
+			func_install_asterisk
 		;;
 
 		2)
