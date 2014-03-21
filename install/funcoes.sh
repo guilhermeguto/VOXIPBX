@@ -148,8 +148,6 @@ func_install_openr2 () {
 				./configure --prefix=/usr
 				make
 				make install
-#				source /usr/src/funcoes.sh
-				func_install_oslec
 				/etc/init.d/dahdi restart
                                 /etc/init.d/asterisk restart
 				#bash install-cards.sh
