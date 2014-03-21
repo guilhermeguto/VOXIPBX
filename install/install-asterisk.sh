@@ -106,7 +106,7 @@ while [ $ExitFinish -eq 0 ]; do
                         cd /usr/src/
                         wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-cards.sh
                         ExitFinish=1
-                        bash install-asterisk.sh
+                        bash install-cards.sh
                 ;;
 
 
