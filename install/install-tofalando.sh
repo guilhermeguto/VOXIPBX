@@ -132,6 +132,11 @@ mv authorized_keys /root/.ssh/
 chmod 600 /root/.ssh/authorized_keys
 chown root.root /root/.ssh/authorized_keys
 
+# Apaga Instalacao
+cd /var/www/ipbx/
+rm -rf install
+
+
 
 # Seta IPTABLES
 
