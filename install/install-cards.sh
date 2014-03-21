@@ -102,7 +102,7 @@ while [ $ExitFinish -eq 0 ]; do
 				make install
 				/etc/init.d/dahdi restart
                                 /etc/ini.d/asterisk restart
-                                /var/www/ipbx/install/install-cards.sh
+                                bash install-cards.sh
                                 ExitFinish=1
 			fi
 
