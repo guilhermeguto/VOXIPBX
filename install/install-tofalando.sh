@@ -79,6 +79,7 @@ mysql -uroot -ptofalando2014 snep25 < tofalando.sql
 
 
 # Alterações em Arquivos
+	func_variaveis
 
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cli/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cgi/php.ini
