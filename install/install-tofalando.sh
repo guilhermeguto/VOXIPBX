@@ -151,4 +151,6 @@ service iptables save
 /etc/init.d/asterisk restart
 /etc/init.d/postfix restart
 
+cd /usr/src/
+
 bash install-asterisk.sh
