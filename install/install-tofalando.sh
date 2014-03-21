@@ -101,7 +101,7 @@ cp -rfv fail2ban /etc
 rm -rf /var/www/index.html
 cd /var/www/ipbx/install
 cp index.php /var/www/
-echo "$TOFALANDO" > /etc/hostname
+
 
 # Install VPN
 
