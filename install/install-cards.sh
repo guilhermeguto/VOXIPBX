@@ -33,10 +33,14 @@ while [ $ExitFinish -eq 0 ]; do
 				clear
 				func_install_oslec
 				func_install_openr2
+				cd /usr/src/
+				bash install-cards.sh
 				ExitFinish=1
 			else
 				clear
 				func_install_openr2
+				cd /usr/src/
+				bash install-cards.sh
 				ExitFinish=1
 			fi
 
@@ -45,6 +49,7 @@ while [ $ExitFinish -eq 0 ]; do
 
 		0)
         		clear
+        		cd /usr/src/
 			bash install-asterisk.sh
 			ExitFinish=1
 		;;
