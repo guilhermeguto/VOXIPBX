@@ -1,5 +1,5 @@
 #!/bin/bash
-source /usr/src/funcoes.sh
+source funcoes.sh
     clear
     echo " > Instalar PLACAS ToFalando"
     echo "====================================="
