@@ -104,6 +104,10 @@ while [ $ExitFinish -eq 0 ]; do
         		clear
 			cd /usr/src/
 			rm -rf asterisk* dahdi* lib* install* fop*  funcoes* linux* openr2*
+			# Apaga Instalacao
+			cd /var/www/ipbx/
+			rm -rf install
+
 			ExitFinish=1
 		;;
 		*)
