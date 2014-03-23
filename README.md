@@ -1,4 +1,3 @@
-; ----------------------------------------------------------------
-; ###ToFalando###
-; Ajustado para uso do ToFalando, by ToFalando
-; ----------------------------------------------------------------
+Copyright (C) 2011-2014 ToFalando
+www.tofalando.com.br
+
