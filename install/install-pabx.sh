@@ -49,6 +49,10 @@ case $DIST in
 	echo "root:@tofalando#" | chpasswd
 	
 	apt-get -y install vim git-core fail2ban openvpn
+	
+	# Pacotes para TTS
+	apt-get -y install perl libwww-perl mpg123 sox
+	
 	# POSTFIX
 	export DEBIAN_FRONTEND=noninteractive
 	apt-get install -q -y postfix mailutils libsasl2-2 ca-certificates libsasl2-modules    
