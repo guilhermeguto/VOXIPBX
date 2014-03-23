@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Copyright (C) 2011-2014 ToFalando
+#
+# Script incialmente desenvolvido por
+# Emerson Luiz ( eluizbr@tofalando.com.br )
+
+
 func_variaveis () {
 
 echo "`ip addr show eth0 | cut -c16-32 | egrep \"[0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}$\"`" | tr -d ' : ' >/tmp/mac.txt
