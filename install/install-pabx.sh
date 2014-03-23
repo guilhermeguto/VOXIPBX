@@ -57,7 +57,7 @@ case $DIST in
 	apt-get -y install vim git-core fail2ban openvpn
 	
 	# Pacotes para TTS
-	apt-get -y install perl libwww-perl mpg123 sox
+	apt-get -y install perl libwww-perl mpg123 sox flac
 	
 	# POSTFIX
 	export DEBIAN_FRONTEND=noninteractive
