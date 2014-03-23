@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# Copyright (C) 2011-2014 ToFalando
+#
+# Script incialmente desenvolvido por
+# Emerson Luiz ( eluizbr@tofalando.com.br )
+
+
 source funcoes.sh
 # Configurar o Branch
 BRANCH='devel'
