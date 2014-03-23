@@ -77,9 +77,7 @@ while [ $ExitFinish -eq 0 ]; do
 
   			#Instalar o Portabilidade IPBX
         		clear
-			cd /usr/src/
-        		wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-portabilidade.sh
-        		bash install-portabilidade.sh
+			func_install_portabilidade
 			ExitFinish=1
 			bash install-asterisk.sh
 		;;
