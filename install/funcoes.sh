@@ -91,11 +91,11 @@ func_install_dahdi ()  {
 				clear
                         	cd /usr/src/
 				rm -rf dahdi*
-                        	wget -c http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
+                        	wget -c http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.9.1+2.9.1.tar.gz
                         	
                         	# Instalando DAHDI
-                        	tar xvfz dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
-                        	ln -s dahdi-linux-complete-2.9.0+2.9.0.1/ dahdi
+                        	tar xvfz dahdi-linux-complete-2.9.0+2.9.1.tar.gz
+                        	ln -s dahdi-linux-complete-2.9.0+2.9.1/ dahdi
 				cd dahdi
 				
 				# Complinado o OSLEC
