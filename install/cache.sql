@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 25/03/2014 às 18h06min
+-- Tempo de Geração: 28/03/2014 às 18h58min
 -- Versão do Servidor: 5.5.35
 -- Versão do PHP: 5.3.10-1ubuntu3.10
 
@@ -32,9 +32,9 @@ CREATE TABLE IF NOT EXISTS `cache` (
   `operadora` varchar(255) NOT NULL,
   `csp` varchar(255) NOT NULL,
   `data` date NOT NULL,
-  `hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `hora` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=116 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
