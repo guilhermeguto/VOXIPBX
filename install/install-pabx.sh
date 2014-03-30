@@ -15,7 +15,7 @@ func_identify_os() {
     if [ -f /etc/debian_version ] ; then
         DIST='DEBIAN'
         
-        if [ "$(lsb_release -cs)" != "precise" ]; then
+        if [ "$(lsb_release -cs)" != "precise" ] &&  [ "$(lsb_release -cs)" != "wheezy" ] ; then
             	echo "A instalação funciona apenas no Ubuntu LTS 12.04 Debian 7.X"
             	exit 255
         fi
