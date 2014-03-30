@@ -43,7 +43,7 @@ read TEMP
 
 
 case $DIST in
-    'UBUNT')
+    'UBUNTU')
         apt-get -y update
 	apt-get -y upgrade
 	echo 1 > /proc/sys/net/ipv4/ip_forward
