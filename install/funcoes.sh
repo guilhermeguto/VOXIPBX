@@ -335,9 +335,12 @@ func_install_portabilidade  () {
 				cp consulta_op.php /var/lib/asterisk/agi-bin/
 				cd /var/www/ipbx/install/
 				rm -rf extensions.conf
-				wget https://raw.github.com/eluizbr/VOXIPBX/master/install/extensions.conf
-				cat extensions.conf > /etc/asterisk/extensions.conf
+				mysql -u root -ptofalando2014 -e 'create database portabilidade'
+				mysql -u root -ptofalando2014 portabilidade < cache.sql
+#				wget https://raw.github.com/eluizbr/VOXIPBX/master/install/extensions.conf
+				cat cache_extensions.conf > /etc/asterisk/extensions.conf
 				cat snep-sip.conf >> /etc/asterisk/sip.conf
+
 
 				/etc/init.d/apache2 restart
 				/etc/init.d/asterisk restart
