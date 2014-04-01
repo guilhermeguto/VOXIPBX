@@ -237,6 +237,7 @@ func_install_g729 () {
 				mv codec_g729-ast18-gcc4-glibc-pentium.so codec_g729.so
 				chmod 755 /usr/lib/asterisk/modules/codec_g729.so
 				asterisk -x "core restart now"
+				cd /usr/src/
 				ExitFinish=1
 		else
 				echo "64"
@@ -246,6 +247,7 @@ func_install_g729 () {
 				mv codec_g729-ast18-icc-glibc-x86_64-pentium4.so codec_g729.so
 				chmod 755 /usr/lib/asterisk/modules/codec_g729.so
 				asterisk -x "core restart now"
+				cd /usr/src/
 				ExitFinish=1
 
 		fi
