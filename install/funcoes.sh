@@ -5,6 +5,8 @@
 # Script incialmente desenvolvido por
 # Emerson Luiz ( eluizbr@tofalando.com.br )
 
+# Configurar o Branch
+BRANCH='devel'
 
 func_variaveis () {
 
