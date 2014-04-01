@@ -1,7 +1,7 @@
 #!/bin/bash
 source funcoes.sh
 # Configurar o Branch
-BRANCH='devel'
+#BRANCH='devel'
 
 
 cd /usr/src/
