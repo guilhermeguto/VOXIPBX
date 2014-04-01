@@ -8,7 +8,7 @@
 
 source funcoes.sh
 # Configurar o Branch
-BRANCH='devel'
+#BRANCH='devel'
 
     clear
     echo " > Instalar ToFalando IPBX"
