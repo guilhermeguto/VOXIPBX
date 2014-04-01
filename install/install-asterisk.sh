@@ -87,10 +87,32 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar o G729 FREE
                         clear
 			cd /usr/src/
-                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-g729.sh
-                        bash install-g729.sh
-                        ExitFinish=1
-                        bash install-asterisk.sh
+        #                wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-g729.sh
+         #               bash install-g729.sh
+          #              ExitFinish=1
+           #             bash install-asterisk.sh
+                        
+                        # Checar asterisk
+
+		if [ ! -d "/etc/asterisk" ]; then
+		
+			func_install_asterisk
+			func_install_g729
+			bash install-asterisk.sh
+        	        ExitFinish=1
+
+		
+		else
+			func_install_g729
+			bash install-asterisk.sh
+	           ExitFinish=1
+
+		fi
+		
+		
+# Fim seta CPU
+
+                        
                 ;;
 
                 7)
