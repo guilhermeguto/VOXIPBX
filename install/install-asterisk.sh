@@ -95,7 +95,9 @@ while [ $ExitFinish -eq 0 ]; do
                         # Checar asterisk
 
 		if [ ! -d "/etc/asterisk" ]; then
-		
+
+                        clear
+			cd /usr/src/		
 			func_install_asterisk
 			func_install_g729
 			bash install-asterisk.sh
@@ -103,6 +105,8 @@ while [ $ExitFinish -eq 0 ]; do
 
 		
 		else
+                        clear
+			cd /usr/src/
 			func_install_g729
 			bash install-asterisk.sh
 	           ExitFinish=1
