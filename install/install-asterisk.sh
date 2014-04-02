@@ -32,7 +32,7 @@ while [ $ExitFinish -eq 0 ]; do
 	 case $OPTION in
 
 		1)
-<<<<<<< HEAD
+
 			clear
 			cd /usr/src/
 			wget -c http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.9.0+2.9.0.1.tar.gz
@@ -80,15 +80,13 @@ while [ $ExitFinish -eq 0 ]; do
 			echo done
 			ExitFinish=1
 			bash install-asterisk.sh
-=======
-
                         #Instalar Placas
                         clear
                         cd /usr/src/
                         wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-cards.sh
                         ExitFinish=1
                         bash install-cards.sh
->>>>>>> 047875e97ba50438c6130491b0ebeb15a2e55d58
+
 		;;
 
 		2)
