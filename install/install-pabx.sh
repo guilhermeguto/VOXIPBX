@@ -1,23 +1,33 @@
 #!/bin/bash
+
+# Copyright (C) 2011-2014 ToFalando
+#
+# Script incialmente desenvolvido por
+# Emerson Luiz ( eluizbr@tofalando.com.br )
+
+# Configurar o Branch
+BRANCH='devel'
+
+apt-get -y install lsb-release
+
 # Identify Linux Distribution type
 func_identify_os() {
     if [ -f /etc/debian_version ] ; then
-    
-        DIST='DEBIAN'
-        apt-get -y install lsb-release
-        if [ "$(lsb_release -cs)" != "precise" ]; then
-            	echo "A instalação funciona apenas no Ubuntu LTS 12.04 Debian 7.X"
+        DIST='UBUNTU'
+        
+        if [ "$(lsb_release -cs)" != "precise" ] ; then
+            	echo "A instalação funciona apenas no Ubuntu LTS 12.04"
             	exit 255
         fi
         
-elif [ -f /etc/debian_version ]; then
-	 DIST='DEBIAN'
-	 if [ "$(lsb_release -cs)" != "wheezy" ]; then
-            	echo "A instalação funciona apenas no Ubuntu LTS 12.04 Debian 7.X"
-            	exit 255
-        fi
+#elif [ -f /etc/debian_version ]; then
+#	 DIST='DEBIAN'
+#	 if [ "$(lsb_release -cs)" != "wheezy" ]; then
+ #           	echo "A instalação funciona apenas no Ubuntu LTS 12.04 Debian 7.X"
+#            	exit 255
+#        fi
 else
-        echo "A instalação funciona apenas no Ubuntu LTS 12.04 Debian 7.X"
+        echo "A instalação funciona apenas no Ubuntu LTS 12.04"
         exit 1
     fi
 }
@@ -33,18 +43,22 @@ read TEMP
 
 
 case $DIST in
-    'DEBIAN')
+    'UBUNTU')
         apt-get -y update
 	apt-get -y upgrade
 	echo 1 > /proc/sys/net/ipv4/ip_forward
 	echo "America/Sao_Paulo" > /etc/timezone
 	dpkg-reconfigure --frontend noninteractive tzdata
-	locale-gen pt_BR.UTF-8
-	export LANG=pt_BR.UTF-8
-	export LC_ALL=pt_BR.UTF-8
+#	locale-gen pt_BR.UTF-8
+#	export LANG=pt_BR.UTF-8
+#	export LC_ALL=pt_BR.UTF-8
 	echo "root:@tofalando#" | chpasswd
 	
 	apt-get -y install vim git-core fail2ban openvpn
+	
+	# Pacotes para TTS
+	apt-get -y install perl libwww-perl mpg123 sox flac
+	
 	# POSTFIX
 	export DEBIAN_FRONTEND=noninteractive
 	apt-get install -q -y postfix mailutils libsasl2-2 ca-certificates libsasl2-modules    
@@ -65,6 +79,7 @@ esac
 
 #Instalar o Asterisk
 cd /usr/src/
-wget --no-check-certificate  https://raw.github.com/eluizbr/VOXIPBX/master/install/install-asterisk.sh
+wget --no-check-certificate  https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/funcoes.sh
+wget --no-check-certificate  https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-asterisk.sh
 bash install-asterisk.sh
 
