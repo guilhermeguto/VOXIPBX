@@ -9,7 +9,7 @@ cd /var/www/ipbx/install/
 cp consulta_op.php /var/lib/asterisk/agi-bin/
 cd /var/www/ipbx/install/
 rm -rf extensions.conf
-wget https://raw.github.com/eluizbr/VOXIPBX/master/install/extensions.conf
+wget https://raw.github.com/guilhermeguto/VOXIPBX/master/install/extensions.conf
 cat extensions.conf > /etc/asterisk/extensions.conf
 cat snep-sip.conf >> /etc/asterisk/sip.conf
 
