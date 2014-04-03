@@ -28,7 +28,7 @@ cd /usr/src/
 a2enmod rewrite
 /etc/init.d/apache2 restart
 
-git clone https://github.com/eluizbr/VOXIPBX.git
+git clone https://github.com/guilhermeguto/VOXIPBX.git
 clear
 mv VOXIPBX ipbx
 mv ipbx  /var/www/
