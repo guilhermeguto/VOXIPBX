@@ -6,7 +6,7 @@
 # Emerson Luiz ( eluizbr@tofalando.com.br )
 
 # Configurar o Branch
-BRANCH='devel'
+BRANCH='master'
 
 func_variaveis () {
 
