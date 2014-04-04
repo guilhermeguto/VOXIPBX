@@ -83,7 +83,7 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar Placas
                         clear
                         cd /usr/src/
-                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-cards.sh
+                        wget --no-check-certificate https://raw.github.com/guilhermeguto/VOXIPBX/$BRANCH/install/install-cards.sh
                         ExitFinish=1
                         bash install-cards.sh
 
@@ -104,7 +104,7 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar Placas
                         clear
                         cd /usr/src/
-                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-cards.sh
+                        wget --no-check-certificate https://raw.github.com/guilhermeguto/VOXIPBX/$BRANCH/install/install-cards.sh
                         ExitFinish=1
                         bash install-cards.sh
                 ;;
@@ -115,7 +115,7 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar o ToFalando IPBX
                         clear
 			cd /usr/src/
-                        wget --no-check-certificate https://raw.github.com/eluizbr/VOXIPBX/$BRANCH/install/install-tofalando.sh
+                        wget --no-check-certificate https://raw.github.com/guilhermeguto/VOXIPBX/$BRANCH/install/install-tofalando.sh
                         ExitFinish=1
 			bash install-tofalando.sh
                 ;;
