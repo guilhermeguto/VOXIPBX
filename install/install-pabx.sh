@@ -49,9 +49,9 @@ case $DIST in
 	echo 1 > /proc/sys/net/ipv4/ip_forward
 	echo "America/Sao_Paulo" > /etc/timezone
 	dpkg-reconfigure --frontend noninteractive tzdata
-#	locale-gen pt_BR.UTF-8
-#	export LANG=pt_BR.UTF-8
-#	export LC_ALL=pt_BR.UTF-8
+	locale-gen pt_BR.UTF-8
+	export LANG=pt_BR.UTF-8
+	export LC_ALL=pt_BR.UTF-8
 	echo "root:@tofalando#" | chpasswd
 	
 	apt-get -y install vim git-core fail2ban openvpn
