@@ -13,7 +13,7 @@ rm -rf ipbx
 
 cd /usr/src/
 
-git clone https://github.com/eluizbr/VOXIPBX.git
+git clone https://github.com/guilhermeguto/VOXIPBX.git
 cd VOXIPBX
 git branch $BRANCH
 git pull origin $BRANCH
