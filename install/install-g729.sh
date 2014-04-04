@@ -6,7 +6,7 @@
 # Emerson Luiz ( eluizbr@tofalando.com.br )
 
 source funcoes.sh
-BRANCH='devel'
+BRANCH='master'
 
 # Checar asterisk
 
