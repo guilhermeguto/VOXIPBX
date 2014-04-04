@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.5.35, for debian-linux-gnu (i686)
+-- MySQL dump 10.13  Distrib 5.5.35, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: snep25
 -- ------------------------------------------------------
@@ -696,7 +696,7 @@ CREATE TABLE `peers` (
 
 LOCK TABLES `peers` WRITE;
 /*!40000 ALTER TABLE `peers` DISABLE KEYS */;
-INSERT INTO `peers` VALUES (1,'admin','admin123','','','','Administrador ','default','','rfc2833','admin',NULL,'','dynamic','','pt','admin','','no','','','',NULL,'','no','','','','admin123','peer','admin','all','alaw;ulaw;gsm;g729;','cliente',0,'','','yes','','','','','0','1','1','no','R',NULL,0,NULL,'no','admin',NULL,'N',NULL,0,NULL,'a:21:{i:0;s:1:\"1\";i:1;s:2:\"10\";i:2;s:2:\"18\";i:3;s:2:\"23\";i:4;s:2:\"27\";i:5;s:2:\"31\";i:6;s:1:\"3\";i:7;s:2:\"12\";i:8;s:2:\"20\";i:9;s:2:\"24\";i:10;s:2:\"28\";i:11;s:1:\"5\";i:12;s:2:\"14\";i:13;s:2:\"21\";i:14;s:2:\"25\";i:15;s:2:\"29\";i:16;s:1:\"7\";i:17;s:2:\"16\";i:18;s:2:\"22\";i:19;s:2:\"26\";i:20;s:2:\"30\";}','no');
+INSERT INTO `peers` VALUES (1,'admin','admin123','','','','Administrador ','default','','rfc2833','admin',NULL,'','dynamic','','pt','admin','','no','','','',NULL,'','no','','','','admin123','peer','admin','all','alaw;ulaw;gsm;g729;','cliente',0,'','','yes','','','','','0','1','1','no','R',NULL,0,NULL,'no','admin',NULL,'N',NULL,0,NULL,'a:15:{i:0;s:1:\"1\";i:1;s:2:\"10\";i:2;s:2:\"18\";i:3;s:2:\"23\";i:4;s:1:\"3\";i:5;s:2:\"12\";i:6;s:2:\"20\";i:7;s:2:\"28\";i:8;s:1:\"5\";i:9;s:2:\"14\";i:10;s:2:\"21\";i:11;s:2:\"25\";i:12;s:2:\"29\";i:13;s:1:\"7\";i:14;s:2:\"16\";}','no');
 /*!40000 ALTER TABLE `peers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -951,7 +951,7 @@ CREATE TABLE `regras_negocio` (
   `record` tinyint(1) NOT NULL DEFAULT '0',
   `ativa` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -960,6 +960,7 @@ CREATE TABLE `regras_negocio` (
 
 LOCK TABLES `regras_negocio` WRITE;
 /*!40000 ALTER TABLE `regras_negocio` DISABLE KEYS */;
+INSERT INTO `regras_negocio` VALUES (1,0,'Ramais','X','RX:XXXX','00:00:00-23:59:59','sun,mon,tue,wed,thu,fri,sat',0,1);
 /*!40000 ALTER TABLE `regras_negocio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -985,6 +986,7 @@ CREATE TABLE `regras_negocio_actions` (
 
 LOCK TABLES `regras_negocio_actions` WRITE;
 /*!40000 ALTER TABLE `regras_negocio_actions` DISABLE KEYS */;
+INSERT INTO `regras_negocio_actions` VALUES (1,0,'Ccustos'),(1,1,'DiscarRamal');
 /*!40000 ALTER TABLE `regras_negocio_actions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1011,6 +1013,7 @@ CREATE TABLE `regras_negocio_actions_config` (
 
 LOCK TABLES `regras_negocio_actions_config` WRITE;
 /*!40000 ALTER TABLE `regras_negocio_actions_config` DISABLE KEYS */;
+INSERT INTO `regras_negocio_actions_config` VALUES (1,0,'ccustos','9'),(1,1,'allow_voicemail','false'),(1,1,'dial_flags','twk'),(1,1,'dial_timeout','60'),(1,1,'diff_ring','false'),(1,1,'dont_overflow','false'),(1,1,'resolv_agent','false');
 /*!40000 ALTER TABLE `regras_negocio_actions_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1333,4 +1336,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-03-16 13:29:16
+-- Dump completed on 2014-04-02 13:15:59
