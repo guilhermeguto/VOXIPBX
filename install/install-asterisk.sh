@@ -115,11 +115,8 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar o ToFalando IPBX
                         clear
 			cd /usr/src/
-<<<<<<< HEAD
                         wget --no-check-certificate https://raw.github.com/guilhermeguto/VOXIPBX/master/install/install-tofalando.sh
-=======
                         wget --no-check-certificate https://raw.github.com/guilhermeguto/VOXIPBX/$BRANCH/install/install-tofalando.sh
->>>>>>> 892527514f2562712c39fd7b27d09f666a35cf8c
                         ExitFinish=1
 			bash install-tofalando.sh
                 ;;
@@ -129,13 +126,10 @@ while [ $ExitFinish -eq 0 ]; do
 
   			#Instalar o Portabilidade IPBX
         		clear
-<<<<<<< HEAD
 			cd /usr/src/
         		wget --no-check-certificate https://raw.github.com/guilhermeguto/VOXIPBX/master/install/install-portabilidade.sh
         		bash install-portabilidade.sh
-=======
 			func_install_portabilidade
->>>>>>> 892527514f2562712c39fd7b27d09f666a35cf8c
 			ExitFinish=1
 			bash install-asterisk.sh
 		;;
@@ -145,12 +139,10 @@ while [ $ExitFinish -eq 0 ]; do
                         #Instalar o G729 FREE
                         clear
 			cd /usr/src/
-<<<<<<< HEAD
                         wget --no-check-certificate https://raw.github.com/guilhermeguto/VOXIPBX/master/install/install-g729.sh
                         bash install-g729.sh
                         ExitFinish=1
                         bash install-asterisk.sh
-=======
 		if [ ! -d "/etc/asterisk" ]; then
 
                         clear
@@ -174,21 +166,17 @@ while [ $ExitFinish -eq 0 ]; do
 # Fim seta CPU
 
                         
->>>>>>> 892527514f2562712c39fd7b27d09f666a35cf8c
                 ;;
 
                 7)
 
                         #Instalar a Mesa Operadora
                         clear
-<<<<<<< HEAD
                         cd /usr/src/
                         wget --no-check-certificate https://raw.github.com/guilhermeguto/VOXIPBX/master/install/install-mesa.sh
                         bash install-mesa.sh
                         ExitFinish=1
-=======
                         func_install_mesa
->>>>>>> 892527514f2562712c39fd7b27d09f666a35cf8c
                         bash install-asterisk.sh
                 ;;
 
