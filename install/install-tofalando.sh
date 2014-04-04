@@ -14,13 +14,10 @@ rm -rf ipbx
 cd /usr/src/
 
 git clone https://github.com/guilhermeguto/VOXIPBX.git
-<<<<<<< HEAD
-=======
 cd VOXIPBX
 git branch $BRANCH
 git pull origin $BRANCH
 cd ..
->>>>>>> 892527514f2562712c39fd7b27d09f666a35cf8c
 clear
 mv VOXIPBX ipbx
 mv ipbx  /var/www/
