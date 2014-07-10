@@ -160,7 +160,7 @@ func_install_asterisk () {
 				rm -rf asterisk*
                 	        cd /usr/src/
                 	        #wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.26.1.tar.gz
-                        	wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.28.0-rc1.tar.gz
+                        	wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.28.2.tar.gz
                         	tar zxvf asterisk-1.8.28.0-rc1.tar.gz
                         	ln -s asterisk-1.8.28.0-rc1 asterisk
                         	cd asterisk
