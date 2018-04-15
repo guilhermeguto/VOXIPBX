@@ -107,7 +107,7 @@ class AGI extends Snep_Inspector_Test {
     }
 
     public function getTestName() {
-        return Zend_Registry::get("Zend_Translate")->translate("AGI SNEP Environment");
+        return Zend_Registry::get("Zend_Translate")->translate("Ambiente AGI ToFalando");
     }
 
 }
